@@ -1,0 +1,2263 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.5">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Jae Jung">
+<meta name="dcterms.date" content="2025-01-14">
+<title>Module 1 Introduction to Literate Programming with Quarto – M01-1: Introduction to Literate Programming</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ff4371ef257df69894857e99c6ad0d06.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-bf8d43e5e6af1022e6240ff11ad89265.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><link rel="stylesheet" href="styles.css">
+</head>
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">M01-1: Introduction to Literate Programming</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+<li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+</div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li>
+<a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">1</span> Overview</a>
+  <ul>
+<li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes"><span class="header-section-number">1.1</span> Learning outcomes</a></li>
+  <li><a href="#the-textbook-chapters-to-cover" id="toc-the-textbook-chapters-to-cover" class="nav-link" data-scroll-target="#the-textbook-chapters-to-cover"><span class="header-section-number">1.2</span> The textbook chapters to cover:</a></li>
+  </ul>
+</li>
+  <li><a href="#r-r-studio" id="toc-r-r-studio" class="nav-link" data-scroll-target="#r-r-studio"><span class="header-section-number">2</span> R &amp; R Studio</a></li>
+  <li><a href="#rstudio-ide" id="toc-rstudio-ide" class="nav-link" data-scroll-target="#rstudio-ide"><span class="header-section-number">3</span> RStudio IDE</a></li>
+  <li>
+<a href="#steps-in-preparing-for-a-project" id="toc-steps-in-preparing-for-a-project" class="nav-link" data-scroll-target="#steps-in-preparing-for-a-project"><span class="header-section-number">4</span> Steps in Preparing for a project</a>
+  <ul>
+<li><a href="#start-a-new-project" id="toc-start-a-new-project" class="nav-link" data-scroll-target="#start-a-new-project"><span class="header-section-number">4.1</span> Start a new project</a></li>
+  <li>
+<a href="#start-a-codebook-and-save-it" id="toc-start-a-codebook-and-save-it" class="nav-link" data-scroll-target="#start-a-codebook-and-save-it"><span class="header-section-number">4.2</span> Start a codebook and save it</a>
+  <ul class="collapse">
+<li><a href="#r-scripts" id="toc-r-scripts" class="nav-link" data-scroll-target="#r-scripts"><span class="header-section-number">4.2.1</span> R Scripts</a></li>
+  <li><a href="#rmd-file" id="toc-rmd-file" class="nav-link" data-scroll-target="#rmd-file"><span class="header-section-number">4.2.2</span> Rmd file</a></li>
+  <li><a href="#quarto-file" id="toc-quarto-file" class="nav-link" data-scroll-target="#quarto-file"><span class="header-section-number">4.2.3</span> Quarto File</a></li>
+  <li><a href="#markdown-vs.-html" id="toc-markdown-vs.-html" class="nav-link" data-scroll-target="#markdown-vs.-html"><span class="header-section-number">4.2.4</span> Markdown vs.&nbsp;HTML</a></li>
+  </ul>
+</li>
+  <li><a href="#start-literate-coding" id="toc-start-literate-coding" class="nav-link" data-scroll-target="#start-literate-coding"><span class="header-section-number">4.3</span> Start literate coding</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#literate-programming" id="toc-literate-programming" class="nav-link" data-scroll-target="#literate-programming"><span class="header-section-number">5</span> Literate Programming</a>
+  <ul>
+<li><a href="#basic-operations" id="toc-basic-operations" class="nav-link" data-scroll-target="#basic-operations"><span class="header-section-number">5.1</span> Basic Operations</a></li>
+  <li><a href="#sec-coding-styles" id="toc-sec-coding-styles" class="nav-link" data-scroll-target="#sec-coding-styles"><span class="header-section-number">5.2</span> Coding Styles</a></li>
+  <li><a href="#pipe-operator" id="toc-pipe-operator" class="nav-link" data-scroll-target="#pipe-operator"><span class="header-section-number">5.3</span> Pipe Operator</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto"><span class="header-section-number">6</span> Quarto</a>
+  <ul>
+<li><a href="#quarto-work-flow-basics" id="toc-quarto-work-flow-basics" class="nav-link" data-scroll-target="#quarto-work-flow-basics"><span class="header-section-number">6.1</span> Quarto Work Flow Basics</a></li>
+  <li>
+<a href="#three-areas-in-quarto-file" id="toc-three-areas-in-quarto-file" class="nav-link" data-scroll-target="#three-areas-in-quarto-file"><span class="header-section-number">6.2</span> Three Areas in Quarto File</a>
+  <ul class="collapse">
+<li><a href="#yaml-header" id="toc-yaml-header" class="nav-link" data-scroll-target="#yaml-header"><span class="header-section-number">6.2.1</span> Yaml header</a></li>
+  <li><a href="#code-chunk" id="toc-code-chunk" class="nav-link" data-scroll-target="#code-chunk"><span class="header-section-number">6.2.2</span> Code chunk</a></li>
+  <li><a href="#markdown-text" id="toc-markdown-text" class="nav-link" data-scroll-target="#markdown-text"><span class="header-section-number">6.2.3</span> Markdown text</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#qurto-interface" id="toc-qurto-interface" class="nav-link" data-scroll-target="#qurto-interface"><span class="header-section-number">6.3</span> Qurto Interface</a>
+  <ul class="collapse">
+<li><a href="#visual-editor" id="toc-visual-editor" class="nav-link" data-scroll-target="#visual-editor"><span class="header-section-number">6.3.1</span> Visual editor</a></li>
+  <li><a href="#source-editor" id="toc-source-editor" class="nav-link" data-scroll-target="#source-editor"><span class="header-section-number">6.3.2</span> Source editor</a></li>
+  </ul>
+</li>
+  </ul>
+</li>
+  <li>
+<a href="#quarto-document-types" id="toc-quarto-document-types" class="nav-link" data-scroll-target="#quarto-document-types"><span class="header-section-number">7</span> Quarto Document types</a>
+  <ul>
+<li><a href="#html" id="toc-html" class="nav-link" data-scroll-target="#html"><span class="header-section-number">7.1</span> HTML</a></li>
+  <li><a href="#pdf" id="toc-pdf" class="nav-link" data-scroll-target="#pdf"><span class="header-section-number">7.2</span> pdf</a></li>
+  <li><a href="#ms-word" id="toc-ms-word" class="nav-link" data-scroll-target="#ms-word"><span class="header-section-number">7.3</span> MS Word</a></li>
+  <li><a href="#revealjs-presentation" id="toc-revealjs-presentation" class="nav-link" data-scroll-target="#revealjs-presentation"><span class="header-section-number">7.4</span> revealjs presentation</a></li>
+  <li><a href="#dashboard" id="toc-dashboard" class="nav-link" data-scroll-target="#dashboard"><span class="header-section-number">7.5</span> Dashboard</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#multiple-formats" id="toc-multiple-formats" class="nav-link" data-scroll-target="#multiple-formats"><span class="header-section-number">8</span> Multiple formats</a>
+  <ul>
+<li><a href="#rendering-to-all-formats." id="toc-rendering-to-all-formats." class="nav-link" data-scroll-target="#rendering-to-all-formats."><span class="header-section-number">8.1</span> Rendering to all formats.</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#quarto-markdown-basics" id="toc-quarto-markdown-basics" class="nav-link" data-scroll-target="#quarto-markdown-basics"><span class="header-section-number">9</span> Quarto Markdown Basics</a>
+  <ul>
+<li><a href="#sec-text-formatting" id="toc-sec-text-formatting" class="nav-link" data-scroll-target="#sec-text-formatting"><span class="header-section-number">9.1</span> Text formatting</a></li>
+  <li><a href="#headings" id="toc-headings" class="nav-link" data-scroll-target="#headings"><span class="header-section-number">9.2</span> Headings</a></li>
+  <li>
+<a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists"><span class="header-section-number">9.3</span> Lists</a>
+  <ul class="collapse">
+<li><a href="#unnumbered-list" id="toc-unnumbered-list" class="nav-link" data-scroll-target="#unnumbered-list"><span class="header-section-number">9.3.1</span> Unnumbered list</a></li>
+  <li><a href="#numbered-list" id="toc-numbered-list" class="nav-link" data-scroll-target="#numbered-list"><span class="header-section-number">9.3.2</span> Numbered List</a></li>
+  </ul>
+</li>
+  <li><a href="#links-and-images" id="toc-links-and-images" class="nav-link" data-scroll-target="#links-and-images"><span class="header-section-number">9.4</span> Links and images</a></li>
+  <li><a href="#sec-callout-blocks" id="toc-sec-callout-blocks" class="nav-link" data-scroll-target="#sec-callout-blocks"><span class="header-section-number">9.5</span> Callout Blocks</a></li>
+  <li><a href="#blockquote" id="toc-blockquote" class="nav-link" data-scroll-target="#blockquote"><span class="header-section-number">9.6</span> Blockquote</a></li>
+  <li><a href="#panel-tabset" id="toc-panel-tabset" class="nav-link" data-scroll-target="#panel-tabset"><span class="header-section-number">9.7</span> Panel Tabset</a></li>
+  <li><a href="#sec-tables" id="toc-sec-tables" class="nav-link" data-scroll-target="#sec-tables"><span class="header-section-number">9.8</span> Tables</a></li>
+  <li>
+<a href="#cell-output" id="toc-cell-output" class="nav-link" data-scroll-target="#cell-output"><span class="header-section-number">9.9</span> Cell output</a>
+  <ul class="collapse">
+<li><a href="#echo-truefalse" id="toc-echo-truefalse" class="nav-link" data-scroll-target="#echo-truefalse"><span class="header-section-number">9.9.1</span> Echo: true/false</a></li>
+  <li><a href="#echo-fenced" id="toc-echo-fenced" class="nav-link" data-scroll-target="#echo-fenced"><span class="header-section-number">9.9.2</span> Echo: fenced</a></li>
+  </ul>
+</li>
+  </ul>
+</li>
+  <li>
+<a href="#data-visualization-workflow" id="toc-data-visualization-workflow" class="nav-link" data-scroll-target="#data-visualization-workflow"><span class="header-section-number">10</span> Data Visualization Workflow</a>
+  <ul>
+<li><a href="#information-about-mpg-data-set" id="toc-information-about-mpg-data-set" class="nav-link" data-scroll-target="#information-about-mpg-data-set"><span class="header-section-number">10.1</span> Information about mpg data set</a></li>
+  <li><a href="#load-up-data-and-set-up" id="toc-load-up-data-and-set-up" class="nav-link" data-scroll-target="#load-up-data-and-set-up"><span class="header-section-number">10.2</span> Load up data and set-up</a></li>
+  <li><a href="#research-hypothesis-or-research-questions" id="toc-research-hypothesis-or-research-questions" class="nav-link" data-scroll-target="#research-hypothesis-or-research-questions"><span class="header-section-number">10.3</span> Research Hypothesis or Research Questions</a></li>
+  <li>
+<a href="#visualize-the-data-and-assess-the-output" id="toc-visualize-the-data-and-assess-the-output" class="nav-link" data-scroll-target="#visualize-the-data-and-assess-the-output"><span class="header-section-number">10.4</span> Visualize the data and assess the output</a>
+  <ul class="collapse">
+<li><a href="#density-plot" id="toc-density-plot" class="nav-link" data-scroll-target="#density-plot"><span class="header-section-number">10.4.1</span> Density Plot</a></li>
+  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram"><span class="header-section-number">10.4.2</span> Histogram</a></li>
+  <li><a href="#summary-insights-from-both-plots" id="toc-summary-insights-from-both-plots" class="nav-link" data-scroll-target="#summary-insights-from-both-plots"><span class="header-section-number">10.4.3</span> Summary Insights from both plots</a></li>
+  <li><a href="#bar-plot" id="toc-bar-plot" class="nav-link" data-scroll-target="#bar-plot"><span class="header-section-number">10.4.4</span> Bar Plot</a></li>
+  <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation"><span class="header-section-number">10.4.5</span> Correlation</a></li>
+  <li><a href="#scatter-plot-with-regression-line" id="toc-scatter-plot-with-regression-line" class="nav-link" data-scroll-target="#scatter-plot-with-regression-line"><span class="header-section-number">10.4.6</span> Scatter plot with regression line</a></li>
+  <li><a href="#gt-and-gtsummary-tables" id="toc-gt-and-gtsummary-tables" class="nav-link" data-scroll-target="#gt-and-gtsummary-tables"><span class="header-section-number">10.4.7</span> gt and gtsummary tables</a></li>
+  </ul>
+</li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">10.5</span> Conclusion</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#resources-in-r-community" id="toc-resources-in-r-community" class="nav-link" data-scroll-target="#resources-in-r-community"><span class="header-section-number">11</span> Resources in R Community</a>
+  <ul>
+<li><a href="#resources-for-this-module" id="toc-resources-for-this-module" class="nav-link" data-scroll-target="#resources-for-this-module"><span class="header-section-number">11.1</span> Resources for this module</a></li>
+  <li><a href="#resources-in-r-community-1" id="toc-resources-in-r-community-1" class="nav-link" data-scroll-target="#resources-in-r-community-1"><span class="header-section-number">11.2</span> Resources in R Community</a></li>
+  </ul>
+</li>
+  </ul><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://www.cpp.edu/cba/customer-insights-lab/curriculum/certificate/dwv/index.shtml"><i class="bi bi-award"></i>DWV 101</a></li><li><a href="https://www.cpp.edu/cba/graduate-business-programs/programs/master-degree-in-digital-marketing-and-marketing-analytics.shtml"><i class="bi bi-bank"></i>MS in Digital Marketing</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Module 1 Introduction to Literate Programming with Quarto</h1>
+<p class="subtitle lead">Principle Assignment</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jae Jung </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 14, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header><section id="overview" class="level1" data-number="1"><h1 data-number="1">
+<span class="header-section-number">1</span> Overview</h1>
+<section id="learning-outcomes" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="learning-outcomes">
+<span class="header-section-number">1.1</span> Learning outcomes</h2>
+<ol type="1">
+<li>Install R and RStudio.</li>
+<li>Describe the layout and menus of RStudio.</li>
+<li>Compare and contrast different types of codebook in RStudio - R Scripts, Rmd, and Quarto.</li>
+<li>Describe the operational basics necessary to perform in every projects in R</li>
+<li>Explain typical workflow for a Quarto project in RStudio.</li>
+<li>Explain what the reproducible research is and the role of literate coding.</li>
+<li>Describe major authoring tools you can implement to make your Quarto document effective.</li>
+<li>Describe some major computational options you can implement on Quartor documents.</li>
+<li>List Quarto’s capabilities that makes it an alternative to MS Office.</li>
+<li>List online resources available in R Community when you need help.</li>
+</ol></section><section id="the-textbook-chapters-to-cover" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="the-textbook-chapters-to-cover">
+<span class="header-section-number">1.2</span> The <a href="https://r4ds.hadley.nz/">textbook</a> chapters to cover:</h2>
+<ul>
+<li>Ch01: Introduction to R for Data Science</li>
+<li>Ch28: Quarto</li>
+<li>Ch02: Workflow: basics</li>
+<li>Ch04: Workflow: Code style</li>
+<li>Ch06: Workflow: Scripts and projects</li>
+<li>Ch08: Getting help</li>
+<li>Ch01: Data visualization</li>
+</ul></section></section><section id="r-r-studio" class="level1" data-number="2"><h1 data-number="2">
+<span class="header-section-number">2</span> R &amp; R Studio</h1>
+<ul>
+<li>Brief History</li>
+<li>Installation</li>
+<li>R Studio IDE menu</li>
+<li>Three major file types in RStudio</li>
+</ul></section><section id="rstudio-ide" class="level1" data-number="3"><h1 data-number="3">
+<span class="header-section-number">3</span> RStudio IDE</h1>
+<ul>
+<li>Four quadrants</li>
+<li>Menu
+<ul>
+<li>Tools &gt; Global Options</li>
+<li>Output location options</li>
+</ul>
+</li>
+</ul></section><section id="steps-in-preparing-for-a-project" class="level1" data-number="4"><h1 data-number="4">
+<span class="header-section-number">4</span> Steps in Preparing for a project</h1>
+<section id="start-a-new-project" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="start-a-new-project">
+<span class="header-section-number">4.1</span> Start a new project</h2>
+<ul>
+<li>Projects are the containers for all of your scripts</li>
+</ul>
+<ol type="1">
+<li>Press new project</li>
+<li>Select a new or existing directory depending on your needs</li>
+<li>Select your folder that contains your scripts</li>
+<li>Press create project</li>
+</ol>
+<ul>
+<li>You should see your .proj file and others in the files panel</li>
+</ul></section><section id="start-a-codebook-and-save-it" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="start-a-codebook-and-save-it">
+<span class="header-section-number">4.2</span> Start a codebook and save it</h2>
+<section id="r-scripts" class="level3" data-number="4.2.1"><h3 data-number="4.2.1" class="anchored" data-anchor-id="r-scripts">
+<span class="header-section-number">4.2.1</span> R Scripts</h3>
+</section><section id="rmd-file" class="level3" data-number="4.2.2"><h3 data-number="4.2.2" class="anchored" data-anchor-id="rmd-file">
+<span class="header-section-number">4.2.2</span> Rmd file</h3>
+</section><section id="quarto-file" class="level3" data-number="4.2.3"><h3 data-number="4.2.3" class="anchored" data-anchor-id="quarto-file">
+<span class="header-section-number">4.2.3</span> Quarto File</h3>
+</section><section id="markdown-vs.-html" class="level3" data-number="4.2.4"><h3 data-number="4.2.4" class="anchored" data-anchor-id="markdown-vs.-html">
+<span class="header-section-number">4.2.4</span> Markdown vs.&nbsp;HTML</h3>
+<p>Markdown and HTML are both markup languages used for creating formatted content, but they have distinct characteristics. Here’s a summary of their similarities and differences:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 37%">
+<col style="width: 37%">
+</colgroup>
+<thead><tr class="header">
+<th><strong>Feature</strong></th>
+<th><strong>Markdown</strong></th>
+<th><strong>HTML</strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Syntax complexity</td>
+<td>Simple and easy to read</td>
+<td>More complex with specific tags</td>
+</tr>
+<tr class="even">
+<td>Learning curve</td>
+<td>Low, quick to learn</td>
+<td>Steeper, requires more time to master</td>
+</tr>
+<tr class="odd">
+<td>Readability</td>
+<td>Highly readable, even in raw form</td>
+<td>Less readable in raw form</td>
+</tr>
+<tr class="even">
+<td>Flexibility</td>
+<td>Limited formatting options</td>
+<td>Highly flexible with extensive formatting</td>
+</tr>
+<tr class="odd">
+<td>Output</td>
+<td>Primarily static content</td>
+<td>Dynamic web pages and applications</td>
+</tr>
+<tr class="even">
+<td>Supported elements</td>
+<td>Basic formatting (headings, lists, links)</td>
+<td>Wide range of elements (forms, multimedia)</td>
+</tr>
+<tr class="odd">
+<td>Conversion</td>
+<td>Easily converts to HTML</td>
+<td>Cannot be directly converted to Markdown</td>
+</tr>
+<tr class="even">
+<td>Collaborative editing</td>
+<td>Well-suited for collaboration</td>
+<td>Less ideal for collaborative editing</td>
+</tr>
+<tr class="odd">
+<td>Customization</td>
+<td>Limited styling options</td>
+<td>Extensive styling with CSS</td>
+</tr>
+<tr class="even">
+<td>Use cases</td>
+<td>Documentation, simple content</td>
+<td>Complex web development, detailed layouts</td>
+</tr>
+<tr class="odd">
+<td>Browser support</td>
+<td>Requires conversion to HTML</td>
+<td>Natively supported by browsers</td>
+</tr>
+<tr class="even">
+<td>Extensibility</td>
+<td>Limited, varies by flavor</td>
+<td>Highly extensible with JavaScript</td>
+</tr>
+</tbody>
+</table></section></section><section id="start-literate-coding" class="level2" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="start-literate-coding">
+<span class="header-section-number">4.3</span> Start literate coding</h2>
+</section></section><section id="literate-programming" class="level1" data-number="5"><h1 data-number="5">
+<span class="header-section-number">5</span> Literate Programming</h1>
+<section id="basic-operations" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="basic-operations">
+<span class="header-section-number">5.1</span> Basic Operations</h2>
+<blockquote class="blockquote">
+<p>In the following code chunk, you will learn some basic operations in R.</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#| label: Basic-Operation</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="dv">2</span><span class="sc">*</span><span class="dv">2</span> <span class="co"># *: multiplication</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="dv">2</span><span class="sc">^</span><span class="dv">3</span> <span class="co"># ^: use carrot to raise the base to the power of the following number.</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co">#creating an object</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>message <span class="ot">&lt;-</span> <span class="st">"Hello WOrld!"</span> <span class="co"># assigning elements to a variable. Do not break between less-than sign and the hyphen.</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a>message <span class="ot">=</span> <span class="st">"Hello WOrld!"</span> <span class="co"># equal sign also works.</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="co">#to print,</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="fu">print</span>(message)</span>
+<span id="cb1-14"><a href="#cb1-14"></a></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="co">#to print, print function is necessary. You can just type the object and run it.</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a>message</span>
+<span id="cb1-17"><a href="#cb1-17"></a></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># An object can be any type: e.g., strings and numbers</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a>number <span class="ot">&lt;-</span> <span class="dv">7</span> </span>
+<span id="cb1-20"><a href="#cb1-20"></a></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="fu">max</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">90</span>,<span class="dv">30</span>) <span class="co"># maximum</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="fu">min</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">90</span>,<span class="dv">30</span>) <span class="co"># minimum</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2
+[1] 4
+[1] 8
+[1] "Hello WOrld!"
+[1] "Hello WOrld!"
+[1] 90
+[1] 2</code></pre>
+</div>
+</div>
+</section><section id="sec-coding-styles" class="level2" data-number="5.2"><h2 data-number="5.2" class="anchored" data-anchor-id="sec-coding-styles">
+<span class="header-section-number">5.2</span> Coding Styles</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co">#install.packages("tidyverse")</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="co">#install.packages("palmerpenguins")</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Base R way of coding</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Tidyverse way of coding</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">head</span>(penguins)</span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="fu">mean</span>(penguins<span class="sc">$</span>bill_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+1 Adelie  Torgersen           39.1          18.7               181        3750
+2 Adelie  Torgersen           39.5          17.4               186        3800
+3 Adelie  Torgersen           40.3          18                 195        3250
+4 Adelie  Torgersen           NA            NA                  NA          NA
+5 Adelie  Torgersen           36.7          19.3               193        3450
+6 Adelie  Torgersen           39.3          20.6               190        3650
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
+[1] 43.92193</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">head</span>()</span>
+<span id="cb6-6"><a href="#cb6-6"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">pull</span>(bill_length_mm) <span class="sc">|&gt;</span> </span>
+<span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">mean</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+1 Adelie  Torgersen           39.1          18.7               181        3750
+2 Adelie  Torgersen           39.5          17.4               186        3800
+3 Adelie  Torgersen           40.3          18                 195        3250
+4 Adelie  Torgersen           NA            NA                  NA          NA
+5 Adelie  Torgersen           36.7          19.3               193        3450
+6 Adelie  Torgersen           39.3          20.6               190        3650
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
+[1] 43.92193</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="pipe-operator" class="level2" data-number="5.3"><h2 data-number="5.3" class="anchored" data-anchor-id="pipe-operator">
+<span class="header-section-number">5.3</span> Pipe Operator</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that R has always multiple ways to accomplish the same goal. <code>|&gt;</code> is called <code>native pipe operator</code>. It works the same as <code>%&gt;%</code>, which came from <code>mgrittr</code> package that revolutionized the way we code in R, paving the trend for the modern data science in R.</p>
+<p>While the data frame, df, in <a href="#fig-cty-by-cyl-density" class="quarto-xref">Figure&nbsp;1</a> was included inside ggplot function, the df in <a href="#fig-cty-by-cyl-histogram" class="quarto-xref">Figure&nbsp;2</a> was the first appear in the code.</p>
+<blockquote class="blockquote">
+<p>The pipe operator is one important difference between base R and Tidyverse in how we code.</p>
+</blockquote>
+</div>
+</div>
+</section></section><section id="quarto" class="level1" data-number="6"><h1 data-number="6">
+<span class="header-section-number">6</span> Quarto</h1>
+<ul>
+<li>Quarto unifies the functionality of many packages from the R Markdown ecosystem (rmarkdown, bookdown, distill, xaringan, etc.) into a single consistent system as well as extends it with native support for multiple programming languages like Python and Julia in addition to R.</li>
+<li>In a way, Quarto reflects everything that was learned from expanding and supporting the R Markdown ecosystem over a decade.</li>
+</ul>
+<section id="quarto-work-flow-basics" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="quarto-work-flow-basics">
+<span class="header-section-number">6.1</span> Quarto Work Flow Basics</h2>
+<ul>
+<li>How to start it and save it (e.g., test.qmd)</li>
+<li>Rendering it:</li>
+<li>Source vs.&nbsp;visual tab interface</li>
+<li>r4ds: <a href="https://r4ds.hadley.nz/quarto#quarto-basics" class="uri">https://r4ds.hadley.nz/quarto#quarto-basics</a>
+</li>
+</ul></section><section id="three-areas-in-quarto-file" class="level2" data-number="6.2"><h2 data-number="6.2" class="anchored" data-anchor-id="three-areas-in-quarto-file">
+<span class="header-section-number">6.2</span> Three Areas in Quarto File</h2>
+<ul>
+<li>Detailed tutorials availabe at <a href="https://quarto.org/docs/get-started/hello/rstudio.html">the official Quarto site</a>
+</li>
+</ul>
+<section id="yaml-header" class="level3" data-number="6.2.1"><h3 data-number="6.2.1" class="anchored" data-anchor-id="yaml-header">
+<span class="header-section-number">6.2.1</span> Yaml header</h3>
+<blockquote class="blockquote">
+<p>An (optional) YAML header demarcated by three dashes (—) on either end.</p>
+</blockquote>
+<pre><code>---
+title: "Module 1 Introduction to R, RStudio, and Qurto"
+author: "Jae Jung"
+date: '2025-01-14 00:51:07'
+format: 
+  html: 
+    toc: true
+    toc-depth: 4
+    embed-resources: true
+editor: visual
+execute: 
+  freeze: auto
+---</code></pre>
+</section><section id="code-chunk" class="level3" data-number="6.2.2"><h3 data-number="6.2.2" class="anchored" data-anchor-id="code-chunk">
+<span class="header-section-number">6.2.2</span> Code chunk</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="co">#| label: demo-code-chunk</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="co">#| include: true</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="co">#install.packages("tidyverse")</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="co">#install.packages("palmerpenguins")</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb9-8"><a href="#cb9-8"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="markdown-text" class="level3" data-number="6.2.3"><h3 data-number="6.2.3" class="anchored" data-anchor-id="markdown-text">
+<span class="header-section-number">6.2.3</span> Markdown text</h3>
+<ul>
+<li>Text area is all the canvas area within qmd file other than Yaml header and code chun areas.</li>
+<li>Quarto uses markdown syntax for text.
+<ul>
+<li>If using the <strong>visual editor</strong>, you won’t need to learn much markdown syntax for authoring your document, as you can use the menus and shortcuts to add a header, bold text, insert a table, etc.</li>
+<li>If using the <strong>source editor</strong>, you can achieve these with markdown expressions like ##, <strong>bold</strong>, etc.</li>
+</ul>
+</li>
+<li>You can use text area for typing pros as you would normally do in MS Word or Google Doc.
+<ul>
+<li>Text with formatting, including section headers, hyperlinks, an embedded image, and an inline code chunk.</li>
+</ul>
+</li>
+<li>You can also style it.
+<ul>
+<li>Bold</li>
+<li>Italicize</li>
+<li>Headings: h1, h2, h3</li>
+</ul>
+</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Coding Tips">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Coding Tips
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>Note: It is possible to type the code and run in the text area.</p>
+</blockquote>
+<ul>
+<li>However, your code in the text area won’t be read and rendered into a document unless your codes are inside a code chunk. - During the rendering, RStudio will be in auto piolt mode and will treat everything in the text area a text except for in-line coding, which will be demonstrated later.</li>
+<li>Thus, do <strong>not</strong> <strong><em>code</em></strong> in the <strong>text area</strong>.</li>
+</ul>
+</div>
+</div>
+</section></section><section id="qurto-interface" class="level2" data-number="6.3"><h2 data-number="6.3" class="anchored" data-anchor-id="qurto-interface">
+<span class="header-section-number">6.3</span> Qurto Interface</h2>
+<section id="visual-editor" class="level3" data-number="6.3.1"><h3 data-number="6.3.1" class="anchored" data-anchor-id="visual-editor">
+<span class="header-section-number">6.3.1</span> Visual editor</h3>
+<ul>
+<li>Easier to those who are familiar with MS Word or Google Doc.</li>
+<li><code>ctrl/commnad + /</code></li>
+<li>Adding table by hand is cumbersome; use the visual mode as in <a href="#sec-tables" class="quarto-xref">Section&nbsp;9.8</a>.</li>
+<li>Adding an figure/image</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="https://r4ds.hadley.nz/quarto#fig-visual-editor"><img src="https://r4ds.hadley.nz/quarto/quarto-visual-editor.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="visual editor graphic"></a></p>
+</figure>
+</div>
+<figcaption>fig-visual-editor</figcaption></figure>
+</div>
+</section><section id="source-editor" class="level3" data-number="6.3.2"><h3 data-number="6.3.2" class="anchored" data-anchor-id="source-editor">
+<span class="header-section-number">6.3.2</span> Source editor</h3>
+<ul>
+<li>Easier to those who are familiar with R Script file or Rmd file.</li>
+<li>Useful for debugging any Quarto syntax errors since it’s often easier to catch these in plain text.</li>
+<li>Handy reference sheet available at the RStudio menue: <em>Help &gt; Markdown Quick Reference</em>
+</li>
+<li>The guide below shows how to use Pandoc’s Markdown for authoring Quarto documents in the source editor.</li>
+</ul></section></section></section><section id="quarto-document-types" class="level1" data-number="7"><h1 data-number="7">
+<span class="header-section-number">7</span> Quarto Document types</h1>
+<section id="html" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="html">
+<span class="header-section-number">7.1</span> HTML</h2>
+<p><em>Note</em>: Practice creating documents in each form.</p>
+</section><section id="pdf" class="level2" data-number="7.2"><h2 data-number="7.2" class="anchored" data-anchor-id="pdf">
+<span class="header-section-number">7.2</span> pdf</h2>
+<ul>
+<li><p>In order to create PDFs you will need to install a recent distribution of <a href="https://www.latex-project.org/">LaTeX</a>.</p></li>
+<li>
+<p>Use TinyTeX (which is based on TexLive), which you can install with the following command:</p>
+<pre><code>Terminal</code></pre>
+<pre><code>quarto install tinytex</code></pre>
+</li>
+</ul></section><section id="ms-word" class="level2" data-number="7.3"><h2 data-number="7.3" class="anchored" data-anchor-id="ms-word">
+<span class="header-section-number">7.3</span> MS Word</h2>
+<pre><code>---
+title: "Testing for Word document"
+format: docx
+editor: visual
+---</code></pre>
+</section><section id="revealjs-presentation" class="level2" data-number="7.4"><h2 data-number="7.4" class="anchored" data-anchor-id="revealjs-presentation">
+<span class="header-section-number">7.4</span> revealjs presentation</h2>
+<pre><code>---
+title: "Testing for Presentation"
+format: revealjs
+editor: visual
+---</code></pre>
+</section><section id="dashboard" class="level2" data-number="7.5"><h2 data-number="7.5" class="anchored" data-anchor-id="dashboard">
+<span class="header-section-number">7.5</span> Dashboard</h2>
+<pre><code>---
+title: "Testing for Presentation"
+format: dashboard
+editor: visual
+---</code></pre>
+</section></section><section id="multiple-formats" class="level1" data-number="8"><h1 data-number="8">
+<span class="header-section-number">8</span> Multiple formats</h1>
+<p>Some documents you create will have only a single output format, however in many cases it will be desirable to support multiple formats. Let’s add the <code>html</code> and <code>docx</code> formats to our document and modify some options specific to each format.</p>
+<pre><code>---
+title: "Housing Prices"
+author: "YOur Name"
+highlight-style: pygments
+format:
+  html: 
+    code-fold: true
+    html-math-method: katex
+  pdf:
+    geometry: 
+      - top=30mm
+      - left=30mm
+  docx: default
+---</code></pre>
+<section id="rendering-to-all-formats." class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="rendering-to-all-formats.">
+<span class="header-section-number">8.1</span> Rendering to all formats.</h2>
+<blockquote class="blockquote">
+<p>If you would like to render to all formats, you can do so with the quarto package, which provides an R interface to the Quarto CLI. - For example, to render the current document, use quarto::quarto_render(). You can also specify the name of the document you want to render as well as the output format(s).</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1"></a><span class="in">```{r}</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="co">#| warning: false</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="co">#| eval: false</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>quarto<span class="sc">::</span><span class="fu">quarto_render</span>(</span>
+<span id="cb16-5"><a href="#cb16-5"></a>  <span class="st">"test.qmd"</span>, </span>
+<span id="cb16-6"><a href="#cb16-6"></a>  <span class="at">output_format =</span> <span class="fu">c</span>(<span class="st">"pdf"</span>, <span class="st">"docx"</span>)</span>
+<span id="cb16-7"><a href="#cb16-7"></a>)</span>
+<span id="cb16-8"><a href="#cb16-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section><section id="quarto-markdown-basics" class="level1" data-number="9"><h1 data-number="9">
+<span class="header-section-number">9</span> Quarto Markdown Basics</h1>
+<section id="sec-text-formatting" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="sec-text-formatting">
+<span class="header-section-number">9.1</span> Text formatting</h2>
+<ol type="1">
+<li><p><em>italic</em></p></li>
+<li><p><strong>bold</strong></p></li>
+<li><p><del>strikeout</del></p></li>
+<li><p><code>code</code></p></li>
+<li><p>superscript<sup>2</sup></p></li>
+<li><p>subscript<sub>2</sub></p></li>
+<li>
+<p>Using spans</p>
+<ul>
+<li><p><u>underline</u></p></li>
+<li><p><span class="smallcaps">small caps</span></p></li>
+<li><p>can change the <span style="color:red;">font color to red</span></p></li>
+</ul>
+</li>
+</ol></section><section id="headings" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="headings">
+<span class="header-section-number">9.2</span> Headings</h2>
+<pre><code># 1st Level Header
+
+## 2nd Level Header
+
+### 3rd Level Header</code></pre>
+<p><em>Note</em>: There must be a space between the last pound and the first letter of the headings.</p>
+</section><section id="lists" class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" data-anchor-id="lists">
+<span class="header-section-number">9.3</span> Lists</h2>
+<section id="unnumbered-list" class="level3" data-number="9.3.1"><h3 data-number="9.3.1" class="anchored" data-anchor-id="unnumbered-list">
+<span class="header-section-number">9.3.1</span> Unnumbered list</h3>
+<ul>
+<li>Bulleted list item 1
+<ul>
+<li>sub-item 1</li>
+<li>sub-itme 2
+<ul>
+<li>sub-sub-item 1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Item 2
+<ul>
+<li>Item 2a</li>
+<li>Item 2b</li>
+</ul>
+</li>
+</ul></section><section id="numbered-list" class="level3" data-number="9.3.2"><h3 data-number="9.3.2" class="anchored" data-anchor-id="numbered-list">
+<span class="header-section-number">9.3.2</span> Numbered List</h3>
+<ol type="1">
+<li>Numbered list item 1</li>
+<li>Item 2. The numbers are incremented automatically in the output.
+<ol type="i">
+<li>sub-item 1
+<ol type="a">
+<li>sub-sub-item 1</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol></section></section><section id="links-and-images" class="level2" data-number="9.4"><h2 data-number="9.4" class="anchored" data-anchor-id="links-and-images">
+<span class="header-section-number">9.4</span> Links and images</h2>
+<p><a href="https://www.cpp.edu/cba/customer-insights-lab/index.shtml" class="uri">https://www.cpp.edu/cba/customer-insights-lab/index.shtml</a></p>
+<p><a href="https://www.cpp.edu/cba/customer-insights-lab/index.shtml">Center for Customer Insights and Digital Marketing</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="https://www.cpp.edu/cba/customer-insights-lab/img/home/ccidm-logo-green-on-white-cropped-text.png" class="img-fluid figure-img" alt="The CCIDM logo and the center's full name is spelled in small case letters"></p>
+<figcaption>CCIDM Logo</figcaption></figure>
+</div>
+</section><section id="sec-callout-blocks" class="level2" data-number="9.5"><h2 data-number="9.5" class="anchored" data-anchor-id="sec-callout-blocks">
+<span class="header-section-number">9.5</span> Callout Blocks</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Callouts are markdown divs that have special callout attributes.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>We can insert a callout using the Insert Anything tool.</li>
+</ul>
+</div>
+</div>
+</section><section id="blockquote" class="level2" data-number="9.6"><h2 data-number="9.6" class="anchored" data-anchor-id="blockquote">
+<span class="header-section-number">9.6</span> Blockquote</h2>
+<blockquote class="blockquote">
+<p>Blockquote highlights the prose by making it bigger.</p>
+</blockquote>
+</section><section id="panel-tabset" class="level2" data-number="9.7"><h2 data-number="9.7" class="anchored" data-anchor-id="panel-tabset">
+<span class="header-section-number">9.7</span> Panel Tabset</h2>
+<ul>
+<li>An example is provided in section <a href="#sec-coding-styles" class="quarto-xref">Section&nbsp;5.2</a>.</li>
+</ul></section><section id="sec-tables" class="level2" data-number="9.8"><h2 data-number="9.8" class="anchored" data-anchor-id="sec-tables">
+<span class="header-section-number">9.8</span> Tables</h2>
+<ul>
+<li>Using visual mode</li>
+</ul>
+<table class="caption-top table">
+<caption>MSDM Program Curriculum<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
+</caption>
+<colgroup>
+<col style="width: 26%">
+<col style="width: 40%">
+<col style="width: 33%">
+</colgroup>
+<thead><tr class="header">
+<th></th>
+<th style="text-align: center;">Digital Marketing Strategy Emphasis</th>
+<th style="text-align: center;">Marketing Analytics Emphasis</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Major Required</td>
+<td style="text-align: center;">20 units</td>
+<td style="text-align: center;">20 units</td>
+</tr>
+<tr class="even">
+<td>Major Electives</td>
+<td style="text-align: center;">14 units</td>
+<td style="text-align: center;">14 units</td>
+</tr>
+<tr class="odd">
+<td>Emphasis Recommended</td>
+<td style="text-align: center;">10 units</td>
+<td style="text-align: center;">10 units</td>
+</tr>
+<tr class="even">
+<td>Emphasis Other</td>
+<td style="text-align: center;">4 units</td>
+<td style="text-align: center;">4 units</td>
+</tr>
+<tr class="odd">
+<td><strong><em>Total Units</em></strong></td>
+<td style="text-align: center;"><strong><em>34 units</em></strong></td>
+<td style="text-align: center;"><strong><em>34 units</em></strong></td>
+</tr>
+</tbody>
+</table></section><section id="cell-output" class="level2" data-number="9.9"><h2 data-number="9.9" class="anchored" data-anchor-id="cell-output">
+<span class="header-section-number">9.9</span> Cell output</h2>
+<blockquote class="blockquote">
+<p>By default, the code and its output are displayed within the rendered document.</p>
+</blockquote>
+<ul>
+<li>showing code: <code>echo: true</code>
+</li>
+<li>Hiding code: <code>echo: false</code>
+</li>
+<li>Can be done globally at Yaml or locally at cell.
+<ul>
+<li><strong>Global setting</strong></li>
+</ul>
+</li>
+</ul>
+<section id="echo-truefalse" class="level3" data-number="9.9.1"><h3 data-number="9.9.1" class="anchored" data-anchor-id="echo-truefalse">
+<span class="header-section-number">9.9.1</span> Echo: true/false</h3>
+<pre><code>---
+title: "Quarto Computations"
+execute:
+  echo: false
+---</code></pre>
+<ul>
+<li><strong>Local setting</strong></li>
+</ul>
+<p>To override code hiding global setting at Yaml, add the <code>echo: true</code> cell option as shown below in the chunk labelled <code>scatterplot</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> hwy, <span class="at">y =</span> cty, <span class="at">color =</span> cyl)) <span class="sc">+</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="fu">scale_color_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="index_files/figure-html/scatterplot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>echo: true</code> prints all the codes but not the cell setting such as label and echo.</p>
+</div>
+</div>
+</section><section id="echo-fenced" class="level3" data-number="9.9.2"><h3 data-number="9.9.2" class="anchored" data-anchor-id="echo-fenced">
+<span class="header-section-number">9.9.2</span> Echo: fenced</h3>
+<ul>
+<li>Great for teaching or publication purpose</li>
+<li>Code chunk printed except for <code>echo: fenced</code>
+</li>
+</ul>
+<div class="cell" data-ouput="false">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource markdown code-overflow-wrap number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1"></a><span class="in">```{python}</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="co">#| ouput: false</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="co">#| code-overflow: wrap</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2</code></pre>
+</div>
+</div>
+</section></section></section><section id="data-visualization-workflow" class="level1 page-columns page-full" data-number="10"><h1 data-number="10">
+<span class="header-section-number">10</span> Data Visualization Workflow</h1>
+<section id="information-about-mpg-data-set" class="level2" data-number="10.1"><h2 data-number="10.1" class="anchored" data-anchor-id="information-about-mpg-data-set">
+<span class="header-section-number">10.1</span> Information about mpg data set</h2>
+<ul>
+<li>There are a lot of built-in data set ready for use in R.</li>
+<li>mpg is one of the data set</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1"></a><span class="in">```{r data info}</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="co"># ?mpg  # help</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="co"># help(mpg) # another way of looking up help</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="load-up-data-and-set-up" class="level2" data-number="10.2"><h2 data-number="10.2" class="anchored" data-anchor-id="load-up-data-and-set-up">
+<span class="header-section-number">10.2</span> Load up data and set-up</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1"></a><span class="in">```{r prep}</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="fu">library</span>(GGally)</span>
+<span id="cb23-4"><a href="#cb23-4"></a></span>
+<span id="cb23-5"><a href="#cb23-5"></a>mpg <span class="co"># print mpg dataset</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a>df <span class="ot">&lt;-</span> mpg <span class="co"># assigning the data set to a new name</span></span>
+<span id="cb23-7"><a href="#cb23-7"></a><span class="fu">head</span>(df)</span>
+<span id="cb23-8"><a href="#cb23-8"></a><span class="fu">theme_set</span>(<span class="fu">theme_light</span>()) <span class="co">#set the graphics theme to a light style for this R session.</span></span>
+<span id="cb23-9"><a href="#cb23-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 234 × 11
+   manufacturer model      displ  year   cyl trans drv     cty   hwy fl    class
+   &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;
+ 1 audi         a4           1.8  1999     4 auto… f        18    29 p     comp…
+ 2 audi         a4           1.8  1999     4 manu… f        21    29 p     comp…
+ 3 audi         a4           2    2008     4 manu… f        20    31 p     comp…
+ 4 audi         a4           2    2008     4 auto… f        21    30 p     comp…
+ 5 audi         a4           2.8  1999     6 auto… f        16    26 p     comp…
+ 6 audi         a4           2.8  1999     6 manu… f        18    26 p     comp…
+ 7 audi         a4           3.1  2008     6 auto… f        18    27 p     comp…
+ 8 audi         a4 quattro   1.8  1999     4 manu… 4        18    26 p     comp…
+ 9 audi         a4 quattro   1.8  1999     4 auto… 4        16    25 p     comp…
+10 audi         a4 quattro   2    2008     4 manu… 4        20    28 p     comp…
+# ℹ 224 more rows
+# A tibble: 6 × 11
+  manufacturer model displ  year   cyl trans      drv     cty   hwy fl    class 
+  &lt;chr&gt;        &lt;chr&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; 
+1 audi         a4      1.8  1999     4 auto(l5)   f        18    29 p     compa…
+2 audi         a4      1.8  1999     4 manual(m5) f        21    29 p     compa…
+3 audi         a4      2    2008     4 manual(m6) f        20    31 p     compa…
+4 audi         a4      2    2008     4 auto(av)   f        21    30 p     compa…
+5 audi         a4      2.8  1999     6 auto(l5)   f        16    26 p     compa…
+6 audi         a4      2.8  1999     6 manual(m5) f        18    26 p     compa…</code></pre>
+</div>
+</div>
+</section><section id="research-hypothesis-or-research-questions" class="level2" data-number="10.3"><h2 data-number="10.3" class="anchored" data-anchor-id="research-hypothesis-or-research-questions">
+<span class="header-section-number">10.3</span> Research Hypothesis or Research Questions</h2>
+<ul>
+<li>H1: City mileage will be negatively associated with the size of cylinder. or</li>
+<li>RQ1: Would city mileage differ by cylinder size of vehicles? If so, how?</li>
+</ul></section><section id="visualize-the-data-and-assess-the-output" class="level2 page-columns page-full" data-number="10.4"><h2 data-number="10.4" class="anchored" data-anchor-id="visualize-the-data-and-assess-the-output">
+<span class="header-section-number">10.4</span> Visualize the data and assess the output</h2>
+<section id="density-plot" class="level3" data-number="10.4.1"><h3 data-number="10.4.1" class="anchored" data-anchor-id="density-plot">
+<span class="header-section-number">10.4.1</span> Density Plot</h3>
+<ul>
+<li>
+<p>is for continuous variable.</p>
+<ul>
+<li>In <a href="#fig-cty-by-cyl-density" class="quarto-xref">Figure&nbsp;1</a>, <code>cty</code> is a continuous variable.</li>
+</ul>
+</li>
+<li><p>alpha argument determines the thickness of the color; smaller the number the more transparent it would be.</p></li>
+<li><p>fill argument have a different effect depending on whether we add it inside or outside aes() function.</p></li>
+<li><p>factor() transforms the data into a factor, categorical data type.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1"></a><span class="in">```{r Density plot}</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="co">#| label: fig-cty-by-cyl-density</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="co">#| fig-cap: The impact of cylinder size on the city mileage using density plot</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a></span>
+<span id="cb25-5"><a href="#cb25-5"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> cty)) <span class="co"># there is only one variable, "cty"</span></span>
+<span id="cb25-6"><a href="#cb25-6"></a>g <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">fill=</span><span class="fu">factor</span>(cyl)), <span class="at">alpha=</span><span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb25-7"><a href="#cb25-7"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Density Plot"</span>,</span>
+<span id="cb25-8"><a href="#cb25-8"></a>       <span class="at">subtitle =</span> <span class="st">"City Mileage Grouped by Number of Cylinders"</span>,</span>
+<span id="cb25-9"><a href="#cb25-9"></a>       <span class="at">caption =</span> <span class="st">"Source: mpg dataset"</span>,</span>
+<span id="cb25-10"><a href="#cb25-10"></a>       <span class="at">x=</span> <span class="st">"city Mileage"</span>,      </span>
+<span id="cb25-11"><a href="#cb25-11"></a>       <span class="at">fill=</span><span class="st">"# Cylinders"</span>)</span>
+<span id="cb25-12"><a href="#cb25-12"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-cty-by-cyl-density" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-cty-by-cyl-density-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-cty-by-cyl-density-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cty-by-cyl-density-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The impact of cylinder size on the city mileage using density plot
+</figcaption></figure>
+</div>
+</div>
+</div>
+</section><section id="histogram" class="level3" data-number="10.4.2"><h3 data-number="10.4.2" class="anchored" data-anchor-id="histogram">
+<span class="header-section-number">10.4.2</span> Histogram</h3>
+<ul>
+<li>is for continuous variable.
+<ul>
+<li>in <a href="#fig-cty-by-cyl-histogram" class="quarto-xref">Figure&nbsp;2</a>, the cty is continuous variable.</li>
+</ul>
+</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1"></a><span class="in">```{r Histogram}</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="co">#| label: fig-cty-by-cyl-histogram</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="co">#| fig-cap: The impact of cylinder size on the city mileage using histogram</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a></span>
+<span id="cb26-5"><a href="#cb26-5"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb26-6"><a href="#cb26-6"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">fill=</span><span class="fu">factor</span>(cyl))) <span class="sc">+</span> </span>
+<span id="cb26-7"><a href="#cb26-7"></a><span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">alpha=</span><span class="fl">0.8</span>) <span class="sc">+</span> </span>
+<span id="cb26-8"><a href="#cb26-8"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> <span class="fu">factor</span>(cyl), <span class="at">ncol =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb26-9"><a href="#cb26-9"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"City Mileage Grouped by Number of Cylinders"</span>,</span>
+<span id="cb26-10"><a href="#cb26-10"></a>       <span class="at">subtitle =</span> <span class="st">"Histogram"</span>,</span>
+<span id="cb26-11"><a href="#cb26-11"></a>       <span class="at">caption =</span> <span class="st">"Source: mpg dataset"</span>,</span>
+<span id="cb26-12"><a href="#cb26-12"></a>       <span class="at">x =</span> <span class="st">"City Mileage"</span>,</span>
+<span id="cb26-13"><a href="#cb26-13"></a>       <span class="at">y =</span> <span class="st">"Frequency / # of Cars"</span>,</span>
+<span id="cb26-14"><a href="#cb26-14"></a>       <span class="at">fill =</span> <span class="st">"# of Cylinder"</span></span>
+<span id="cb26-15"><a href="#cb26-15"></a>       )</span>
+<span id="cb26-16"><a href="#cb26-16"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-cty-by-cyl-histogram" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-cty-by-cyl-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-cty-by-cyl-histogram-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cty-by-cyl-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: The impact of cylinder size on the city mileage using histogram
+</figcaption></figure>
+</div>
+</div>
+</div>
+</section><section id="summary-insights-from-both-plots" class="level3" data-number="10.4.3"><h3 data-number="10.4.3" class="anchored" data-anchor-id="summary-insights-from-both-plots">
+<span class="header-section-number">10.4.3</span> Summary Insights from both plots</h3>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As can be seen in both <a href="#fig-cty-by-cyl-density" class="quarto-xref">Figure&nbsp;1</a> and <a href="#fig-cty-by-cyl-histogram" class="quarto-xref">Figure&nbsp;2</a>, cylinder size is negatively related to the city mileage.</p>
+</div>
+</div>
+</section><section id="bar-plot" class="level3" data-number="10.4.4"><h3 data-number="10.4.4" class="anchored" data-anchor-id="bar-plot">
+<span class="header-section-number">10.4.4</span> Bar Plot</h3>
+<ul>
+<li><p>Bar plot is usually used to count one categorical variable, but it can also be used for categorical x and continuous y using “stat = identity”.</p></li>
+<li><p>Can we plot the impact of cylinder on city mileage using bar plot?</p></li>
+<li><p>The answer is yes, but a caution is needed to avoid a mistake.</p></li>
+<li><p>Let’s consider <a href="#fig-cty-by-cyl-bar-1" class="quarto-xref">Figure&nbsp;3 (a)</a> and <a href="#fig-cty-by-cyl-bar-2" class="quarto-xref">Figure&nbsp;3 (b)</a> below.</p></li>
+</ul>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1"></a><span class="in">```{r Barplot}</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="co">#| message: false</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="co">#| label: fig-cty-by-cyl-bar</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a><span class="co">#| fig-cap: The impact of cylinder size on the city mileage using barplots</span></span>
+<span id="cb27-5"><a href="#cb27-5"></a><span class="co">#| fig-subcap:</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a><span class="co">#|   - "cty on Y-axis by summing them by cylinder size"</span></span>
+<span id="cb27-7"><a href="#cb27-7"></a><span class="co">#|   - "cty on Y-axis by averaging them per cylinder size during the wrangling stage"</span></span>
+<span id="cb27-8"><a href="#cb27-8"></a><span class="co">#| layout-ncol: 2</span></span>
+<span id="cb27-9"><a href="#cb27-9"></a></span>
+<span id="cb27-10"><a href="#cb27-10"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb27-11"><a href="#cb27-11"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(cyl), <span class="at">y =</span> cty)) <span class="sc">+</span> </span>
+<span id="cb27-12"><a href="#cb27-12"></a><span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill=</span><span class="fu">factor</span>(cyl)), <span class="at">alpha=</span><span class="fl">0.8</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb27-13"><a href="#cb27-13"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"City Mileage Grouped by Number of Cylinders"</span>,</span>
+<span id="cb27-14"><a href="#cb27-14"></a>       <span class="at">subtitle =</span> <span class="st">"Barplot"</span>,</span>
+<span id="cb27-15"><a href="#cb27-15"></a>       <span class="at">caption =</span> <span class="st">"Source: mpg dataset"</span>,</span>
+<span id="cb27-16"><a href="#cb27-16"></a>       <span class="at">x =</span> <span class="st">"# of Cylnders"</span>,</span>
+<span id="cb27-17"><a href="#cb27-17"></a>       <span class="at">y =</span> <span class="st">"Sum of City mileages"</span> </span>
+<span id="cb27-18"><a href="#cb27-18"></a>       )</span>
+<span id="cb27-19"><a href="#cb27-19"></a></span>
+<span id="cb27-20"><a href="#cb27-20"></a>df <span class="sc">|&gt;</span>  </span>
+<span id="cb27-21"><a href="#cb27-21"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">|&gt;</span>  <span class="co"># group data by cyl</span></span>
+<span id="cb27-22"><a href="#cb27-22"></a>  <span class="fu">summarize</span>(<span class="at">cty_mean =</span> <span class="fu">mean</span>(cty), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span>  <span class="co"># calculate mean of cty and call it "cty_mean"</span></span>
+<span id="cb27-23"><a href="#cb27-23"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(cyl), <span class="at">y =</span> cty_mean)) <span class="sc">+</span> </span>
+<span id="cb27-24"><a href="#cb27-24"></a><span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill=</span><span class="fu">factor</span>(cyl)), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb27-25"><a href="#cb27-25"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"City Mileage Grouped by Number of Cylinders"</span>,</span>
+<span id="cb27-26"><a href="#cb27-26"></a>       <span class="at">subtitle =</span> <span class="st">"Barplot"</span>,</span>
+<span id="cb27-27"><a href="#cb27-27"></a>       <span class="at">caption =</span> <span class="st">"Source: mpg dataset"</span>,</span>
+<span id="cb27-28"><a href="#cb27-28"></a>       <span class="at">x =</span> <span class="st">"# of Cylnders"</span>,</span>
+<span id="cb27-29"><a href="#cb27-29"></a>       <span class="at">y =</span> <span class="st">"Average of City mileage"</span></span>
+<span id="cb27-30"><a href="#cb27-30"></a>       )</span>
+<span id="cb27-31"><a href="#cb27-31"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-cty-by-cyl-bar" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-cty-by-cyl-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cty-by-cyl-bar" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-cty-by-cyl-bar-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure"><div aria-describedby="fig-cty-by-cyl-bar-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-cty-by-cyl-bar-1.png" class="img-fluid figure-img" data-ref-parent="fig-cty-by-cyl-bar" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cty-by-cyl-bar-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) cty on Y-axis by summing them by cylinder size
+</figcaption></figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cty-by-cyl-bar" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-cty-by-cyl-bar-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure"><div aria-describedby="fig-cty-by-cyl-bar-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-cty-by-cyl-bar-2.png" class="img-fluid figure-img" data-ref-parent="fig-cty-by-cyl-bar" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cty-by-cyl-bar-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) cty on Y-axis by averaging them per cylinder size during the wrangling stage
+</figcaption></figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cty-by-cyl-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: The impact of cylinder size on the city mileage using barplots
+</figcaption></figure>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lessons
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When using <code>geom_bar</code> or <code>geom_col</code> with continuous y variable, make sure y is expressed as an an average, not sum.</p>
+</div>
+</div>
+</section><section id="correlation" class="level3 page-columns page-full" data-number="10.4.5"><h3 data-number="10.4.5" class="anchored" data-anchor-id="correlation">
+<span class="header-section-number">10.4.5</span> Correlation</h3>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1"></a><span class="in">```{r}</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="co">#| message: false</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="co">#| label: fig-GGally</span></span>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="co">#| fig-cap: Correlations table using GGally package</span></span>
+<span id="cb28-5"><a href="#cb28-5"></a><span class="co">#| fig-subcap:</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="co">#|   - "correlations using ggcorr"</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a><span class="co">#|   - "correlations using ggpairs"</span></span>
+<span id="cb28-8"><a href="#cb28-8"></a><span class="co">#| layout-ncol: 2</span></span>
+<span id="cb28-9"><a href="#cb28-9"></a><span class="co">#| column: page</span></span>
+<span id="cb28-10"><a href="#cb28-10"></a></span>
+<span id="cb28-11"><a href="#cb28-11"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb28-12"><a href="#cb28-12"></a>  <span class="fu">select</span>(cyl, displ, cty, hwy) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-13"><a href="#cb28-13"></a>  <span class="fu">ggcorr</span>(<span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">label_round =</span> <span class="dv">2</span>) </span>
+<span id="cb28-14"><a href="#cb28-14"></a></span>
+<span id="cb28-15"><a href="#cb28-15"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb28-16"><a href="#cb28-16"></a>  <span class="fu">select</span>(cyl, displ, cty, hwy) <span class="sc">%&gt;%</span> <span class="co"># select all continuous variables in the data</span></span>
+<span id="cb28-17"><a href="#cb28-17"></a>  <span class="fu">ggpairs</span>()<span class="sc">+</span></span>
+<span id="cb28-18"><a href="#cb28-18"></a>  <span class="fu">theme_bw</span>()</span>
+<span id="cb28-19"><a href="#cb28-19"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-GGally" class="quarto-layout-panel page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full"><div aria-describedby="fig-GGally-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
+<div class="quarto-layout-row page-full">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell page-columns page-full" data-ref-parent="fig-GGally" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-GGally-1" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-subfloat-fig figure page-columns page-full"><div aria-describedby="fig-GGally-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
+<img src="index_files/figure-html/fig-GGally-1.png" class="img-fluid figure-img column-page" data-ref-parent="fig-GGally" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-GGally-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) correlations using ggcorr
+</figcaption></figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell page-columns page-full" data-ref-parent="fig-GGally" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-GGally-2" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-subfloat-fig figure page-columns page-full"><div aria-describedby="fig-GGally-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
+<img src="index_files/figure-html/fig-GGally-2.png" class="img-fluid figure-img column-page" data-ref-parent="fig-GGally" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-GGally-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) correlations using ggpairs
+</figcaption></figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-GGally-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Correlations table using GGally package
+</figcaption></figure>
+</div>
+</section><section id="scatter-plot-with-regression-line" class="level3" data-number="10.4.6"><h3 data-number="10.4.6" class="anchored" data-anchor-id="scatter-plot-with-regression-line">
+<span class="header-section-number">10.4.6</span> Scatter plot with regression line</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href="#cb29-1"></a><span class="in">```{r geom point}</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">select</span>(cyl, cty) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-4"><a href="#cb29-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">y =</span> cty))<span class="sc">+</span></span>
+<span id="cb29-5"><a href="#cb29-5"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb29-6"><a href="#cb29-6"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a>  <span class="fu">geom_jitter</span>()<span class="sc">+</span></span>
+<span id="cb29-8"><a href="#cb29-8"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"City Mileage versus Cylinders"</span>,</span>
+<span id="cb29-9"><a href="#cb29-9"></a>       <span class="at">subtitle =</span> <span class="st">"Scatter and jitter plot with regression line"</span>,</span>
+<span id="cb29-10"><a href="#cb29-10"></a>       <span class="at">caption =</span> <span class="st">"Source: mpg dataset"</span>,</span>
+<span id="cb29-11"><a href="#cb29-11"></a>       <span class="at">x =</span> <span class="st">"# of Cylnders"</span>,</span>
+<span id="cb29-12"><a href="#cb29-12"></a>       <span class="at">y =</span> <span class="st">"City mileage"</span>, </span>
+<span id="cb29-13"><a href="#cb29-13"></a>       )</span>
+<span id="cb29-14"><a href="#cb29-14"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="index_files/figure-html/geom point-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="gt-and-gtsummary-tables" class="level3" data-number="10.4.7"><h3 data-number="10.4.7" class="anchored" data-anchor-id="gt-and-gtsummary-tables">
+<span class="header-section-number">10.4.7</span> gt and gtsummary tables</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="co">#| label: tbl-mpg-regression</span></span>
+<span id="cb30-3"><a href="#cb30-3"></a><span class="co">#| tbl-cap: Regression of cty on cyl</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a></span>
+<span id="cb30-5"><a href="#cb30-5"></a><span class="fu">library</span>(gtsummary)</span>
+<span id="cb30-6"><a href="#cb30-6"></a><span class="fu">library</span>(gt)</span>
+<span id="cb30-7"><a href="#cb30-7"></a></span>
+<span id="cb30-8"><a href="#cb30-8"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb30-9"><a href="#cb30-9"></a>  <span class="fu">lm</span>(cty <span class="sc">~</span> cyl, <span class="at">data =</span> _) <span class="sc">|&gt;</span> </span>
+<span id="cb30-10"><a href="#cb30-10"></a>  <span class="fu">tbl_regression</span>(</span>
+<span id="cb30-11"><a href="#cb30-11"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb30-12"><a href="#cb30-12"></a>  <span class="fu">add_n</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb30-13"><a href="#cb30-13"></a>  <span class="fu">modify_header</span>(<span class="at">label =</span> <span class="st">"**Variables**"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb30-14"><a href="#cb30-14"></a>  <span class="fu">as_gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb30-15"><a href="#cb30-15"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="fu">md</span>(<span class="st">"**Impact of Cylinder Size on City Mileage (cty)**"</span>),</span>
+<span id="cb30-16"><a href="#cb30-16"></a>             <span class="at">subtitle =</span> <span class="fu">md</span>(<span class="st">"with `mpg` data"</span>))</span>
+<span id="cb30-17"><a href="#cb30-17"></a></span>
+<span id="cb30-18"><a href="#cb30-18"></a>m_reg <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
+<span id="cb30-19"><a href="#cb30-19"></a>  <span class="fu">lm</span>(cty <span class="sc">~</span> cyl, <span class="at">data =</span> _) </span>
+<span id="cb30-20"><a href="#cb30-20"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-mpg-regression" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mpg-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Regression of cty on cyl
+</figcaption><div aria-describedby="tbl-mpg-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="opxlkyvuvx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#opxlkyvuvx table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#opxlkyvuvx thead, #opxlkyvuvx tbody, #opxlkyvuvx tfoot, #opxlkyvuvx tr, #opxlkyvuvx td, #opxlkyvuvx th {
+  border-style: none;
+}
+
+#opxlkyvuvx p {
+  margin: 0;
+  padding: 0;
+}
+
+#opxlkyvuvx .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#opxlkyvuvx .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#opxlkyvuvx .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#opxlkyvuvx .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#opxlkyvuvx .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#opxlkyvuvx .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#opxlkyvuvx .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#opxlkyvuvx .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#opxlkyvuvx .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#opxlkyvuvx .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#opxlkyvuvx .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#opxlkyvuvx .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#opxlkyvuvx .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#opxlkyvuvx .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#opxlkyvuvx .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#opxlkyvuvx .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#opxlkyvuvx .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#opxlkyvuvx .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#opxlkyvuvx .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#opxlkyvuvx .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#opxlkyvuvx .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#opxlkyvuvx .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#opxlkyvuvx .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#opxlkyvuvx .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#opxlkyvuvx .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#opxlkyvuvx .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#opxlkyvuvx .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#opxlkyvuvx .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#opxlkyvuvx .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#opxlkyvuvx .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#opxlkyvuvx .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#opxlkyvuvx .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#opxlkyvuvx .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#opxlkyvuvx .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#opxlkyvuvx .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#opxlkyvuvx .gt_left {
+  text-align: left;
+}
+
+#opxlkyvuvx .gt_center {
+  text-align: center;
+}
+
+#opxlkyvuvx .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#opxlkyvuvx .gt_font_normal {
+  font-weight: normal;
+}
+
+#opxlkyvuvx .gt_font_bold {
+  font-weight: bold;
+}
+
+#opxlkyvuvx .gt_font_italic {
+  font-style: italic;
+}
+
+#opxlkyvuvx .gt_super {
+  font-size: 65%;
+}
+
+#opxlkyvuvx .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#opxlkyvuvx .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#opxlkyvuvx .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#opxlkyvuvx .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#opxlkyvuvx .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#opxlkyvuvx .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#opxlkyvuvx .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#opxlkyvuvx .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#opxlkyvuvx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="5" class="gt_heading gt_title gt_font_normal"><strong>Impact of Cylinder Size on City Mileage (cty)</strong></th>
+</tr>
+<tr class="gt_heading even">
+<th colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">with <code>mpg</code> data</th>
+</tr>
+<tr class="gt_col_headings header">
+<th id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Variables</strong></th>
+<th id="stat_n" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N</strong></th>
+<th id="estimate" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Beta</strong></th>
+<th id="conf.low" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
+<strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span>
+</th>
+<th id="p.value" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body"><tr class="odd">
+<td class="gt_row gt_left" headers="label">cyl</td>
+<td class="gt_row gt_center" headers="stat_n">234</td>
+<td class="gt_row gt_center" headers="estimate">-2.1</td>
+<td class="gt_row gt_center" headers="conf.low">-2.3, -1.9</td>
+<td class="gt_row gt_center" headers="p.value">&lt;0.001</td>
+</tr></tbody>
+<tfoot class="gt_footnotes"><tr class="odd">
+<td colspan="5" class="gt_footnote">
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> CI = Confidence Interval</td>
+</tr></tfoot>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section></section><section id="conclusion" class="level2" data-number="10.5"><h2 data-number="10.5" class="anchored" data-anchor-id="conclusion">
+<span class="header-section-number">10.5</span> Conclusion</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As shown in all the correct charts above, it appears that the number of cylinders is negatively related to city mileages. One may proceeds to use an inferential statistics as in <a href="#tbl-mpg-regression" class="quarto-xref">Table&nbsp;1</a> to draw a formal conclusion.</p>
+<blockquote class="blockquote">
+<p>According to the correlation analysis above - <a href="#fig-GGally-1" class="quarto-xref">Figure&nbsp;4 (a)</a> and <a href="#fig-GGally-2" class="quarto-xref">Figure&nbsp;4 (b)</a>, the cylinder and the city mileage are highly negatively correlated (<em>r</em> = -0.81). The regressing city miles on cylinder size shows statistically significant negative impact of cylinder size on the city miles such that one unit increase in cylinder size leads to the -2.13 miles decrease in the city mileage.</p>
+</blockquote>
+</div>
+</div>
+</section></section><section id="resources-in-r-community" class="level1" data-number="11"><h1 data-number="11">
+<span class="header-section-number">11</span> Resources in R Community</h1>
+<section id="resources-for-this-module" class="level2" data-number="11.1"><h2 data-number="11.1" class="anchored" data-anchor-id="resources-for-this-module">
+<span class="header-section-number">11.1</span> Resources for this module</h2>
+<ul>
+<li>R for Data Science (2nd eds): <a href="https://r4ds.hadley.nz/" class="uri">https://r4ds.hadley.nz/</a>
+</li>
+<li>Quarto Guide: <a href="https://quarto.org/docs/get-started/hello/rstudio.html" class="uri">https://quarto.org/docs/get-started/hello/rstudio.html</a>
+</li>
+<li>Quarto Cheatsheet: &lt;<a href="https://rstudio.github.io/cheatsheets/html/quarto.html" class="uri">https://rstudio.github.io/cheatsheets/html/quarto.html</a>&gt;</li>
+<li>Quarto presentation Workshop: <a href="https://rstudio-conf-2022.github.io/get-started-quarto/materials/05-presentations.html#/presentations" class="uri">https://rstudio-conf-2022.github.io/get-started-quarto/materials/05-presentations.html#/presentations</a>
+</li>
+</ul></section><section id="resources-in-r-community-1" class="level2" data-number="11.2"><h2 data-number="11.2" class="anchored" data-anchor-id="resources-in-r-community-1">
+<span class="header-section-number">11.2</span> Resources in R Community</h2>
+<ul>
+<li><p>Tidy Tuesday</p></li>
+<li>
+<p>R Facebook Groups</p>
+<ul>
+<li>R Statistical Software Group</li>
+</ul>
+</li>
+<li>
+<p>Stackoverflow</p>
+<ul>
+<li>Good for general questions</li>
+</ul>
+</li>
+<li><p>YouTube – <em>Most effective</em></p></li>
+<li><p>X</p></li>
+<li><p>other social media</p></li>
+</ul>
+
+
+</section></section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<ol>
+<li id="fn1"><p>This is a table caption added when a table was created in the visual mode.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

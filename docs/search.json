@@ -1,0 +1,254 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "",
+    "text": "Install R and RStudio.\nDescribe the layout and menus of RStudio.\nCompare and contrast different types of codebook in RStudio - R Scripts, Rmd, and Quarto.\nDescribe the operational basics necessary to perform in every projects in R\nExplain typical workflow for a Quarto project in RStudio.\nExplain what the reproducible research is and the role of literate coding.\nDescribe major authoring tools you can implement to make your Quarto document effective.\nDescribe some major computational options you can implement on Quartor documents.\nList Quarto’s capabilities that makes it an alternative to MS Office.\nList online resources available in R Community when you need help.\n\n\nCh01: Introduction to R for Data Science\nCh28: Quarto\nCh02: Workflow: basics\nCh04: Workflow: Code style\nCh06: Workflow: Scripts and projects\nCh08: Getting help\nCh01: Data visualization"
+  },
+  {
+    "objectID": "index.html#learning-outcomes",
+    "href": "index.html#learning-outcomes",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "",
+    "text": "Install R and RStudio.\nDescribe the layout and menus of RStudio.\nCompare and contrast different types of codebook in RStudio - R Scripts, Rmd, and Quarto.\nDescribe the operational basics necessary to perform in every projects in R\nExplain typical workflow for a Quarto project in RStudio.\nExplain what the reproducible research is and the role of literate coding.\nDescribe major authoring tools you can implement to make your Quarto document effective.\nDescribe some major computational options you can implement on Quartor documents.\nList Quarto’s capabilities that makes it an alternative to MS Office.\nList online resources available in R Community when you need help."
+  },
+  {
+    "objectID": "index.html#the-textbook-chapters-to-cover",
+    "href": "index.html#the-textbook-chapters-to-cover",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "",
+    "text": "Ch01: Introduction to R for Data Science\nCh28: Quarto\nCh02: Workflow: basics\nCh04: Workflow: Code style\nCh06: Workflow: Scripts and projects\nCh08: Getting help\nCh01: Data visualization"
+  },
+  {
+    "objectID": "index.html#start-a-new-project",
+    "href": "index.html#start-a-new-project",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n4.1 Start a new project",
+    "text": "4.1 Start a new project\n\nProjects are the containers for all of your scripts\n\n\nPress new project\nSelect a new or existing directory depending on your needs\nSelect your folder that contains your scripts\nPress create project\n\n\nYou should see your .proj file and others in the files panel"
+  },
+  {
+    "objectID": "index.html#start-a-codebook-and-save-it",
+    "href": "index.html#start-a-codebook-and-save-it",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n4.2 Start a codebook and save it",
+    "text": "4.2 Start a codebook and save it\n\n4.2.1 R Scripts\n\n4.2.2 Rmd file\n\n4.2.3 Quarto File\n\n4.2.4 Markdown vs. HTML\nMarkdown and HTML are both markup languages used for creating formatted content, but they have distinct characteristics. Here’s a summary of their similarities and differences:\n\n\n\n\n\n\n\nFeature\nMarkdown\nHTML\n\n\n\nSyntax complexity\nSimple and easy to read\nMore complex with specific tags\n\n\nLearning curve\nLow, quick to learn\nSteeper, requires more time to master\n\n\nReadability\nHighly readable, even in raw form\nLess readable in raw form\n\n\nFlexibility\nLimited formatting options\nHighly flexible with extensive formatting\n\n\nOutput\nPrimarily static content\nDynamic web pages and applications\n\n\nSupported elements\nBasic formatting (headings, lists, links)\nWide range of elements (forms, multimedia)\n\n\nConversion\nEasily converts to HTML\nCannot be directly converted to Markdown\n\n\nCollaborative editing\nWell-suited for collaboration\nLess ideal for collaborative editing\n\n\nCustomization\nLimited styling options\nExtensive styling with CSS\n\n\nUse cases\nDocumentation, simple content\nComplex web development, detailed layouts\n\n\nBrowser support\nRequires conversion to HTML\nNatively supported by browsers\n\n\nExtensibility\nLimited, varies by flavor\nHighly extensible with JavaScript"
+  },
+  {
+    "objectID": "index.html#start-literate-coding",
+    "href": "index.html#start-literate-coding",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n4.3 Start literate coding",
+    "text": "4.3 Start literate coding"
+  },
+  {
+    "objectID": "index.html#basic-operations",
+    "href": "index.html#basic-operations",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n5.1 Basic Operations",
+    "text": "5.1 Basic Operations\n\nIn the following code chunk, you will learn some basic operations in R.\n\n\n```{r}\n#| label: Basic-Operation\n1+1\n2*2 # *: multiplication\n2^3 # ^: use carrot to raise the base to the power of the following number.\n\n#creating an object\nmessage &lt;- \"Hello WOrld!\" # assigning elements to a variable. Do not break between less-than sign and the hyphen.\n\nmessage = \"Hello WOrld!\" # equal sign also works.\n\n#to print,\nprint(message)\n\n#to print, print function is necessary. You can just type the object and run it.\nmessage\n\n# An object can be any type: e.g., strings and numbers\nnumber &lt;- 7 \n\nmax(2,5,90,30) # maximum\n\nmin(2,5,90,30) # minimum\n```\n\n[1] 2\n[1] 4\n[1] 8\n[1] \"Hello WOrld!\"\n[1] \"Hello WOrld!\"\n[1] 90\n[1] 2"
+  },
+  {
+    "objectID": "index.html#sec-coding-styles",
+    "href": "index.html#sec-coding-styles",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n5.2 Coding Styles",
+    "text": "5.2 Coding Styles\n\n```{r}\n#| code-fold: false\n\n#install.packages(\"tidyverse\")\n#install.packages(\"palmerpenguins\")\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n```\n\n\n\nBase R way of coding\nTidyverse way of coding\n\n\n\n\n```{r}\n#| code-fold: false\n\nhead(penguins)\nmean(penguins$bill_length_mm, na.rm = TRUE)\n```\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n[1] 43.92193\n\n\n\n\n\n```{r}\n#| code-fold: false\n\npenguins |&gt; \n  head()\npenguins |&gt; \n  pull(bill_length_mm) |&gt; \n  mean(na.rm = TRUE)\n```\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n[1] 43.92193"
+  },
+  {
+    "objectID": "index.html#pipe-operator",
+    "href": "index.html#pipe-operator",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n5.3 Pipe Operator",
+    "text": "5.3 Pipe Operator\n\n\n\n\n\n\nTip\n\n\n\nNote that R has always multiple ways to accomplish the same goal. |&gt; is called native pipe operator. It works the same as %&gt;%, which came from mgrittr package that revolutionized the way we code in R, paving the trend for the modern data science in R.\nWhile the data frame, df, in Figure 1 was included inside ggplot function, the df in Figure 2 was the first appear in the code.\n\nThe pipe operator is one important difference between base R and Tidyverse in how we code."
+  },
+  {
+    "objectID": "index.html#quarto-work-flow-basics",
+    "href": "index.html#quarto-work-flow-basics",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n6.1 Quarto Work Flow Basics",
+    "text": "6.1 Quarto Work Flow Basics\n\nHow to start it and save it (e.g., test.qmd)\nRendering it:\nSource vs. visual tab interface\nr4ds: https://r4ds.hadley.nz/quarto#quarto-basics"
+  },
+  {
+    "objectID": "index.html#three-areas-in-quarto-file",
+    "href": "index.html#three-areas-in-quarto-file",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n6.2 Three Areas in Quarto File",
+    "text": "6.2 Three Areas in Quarto File\n\nDetailed tutorials availabe at the official Quarto site\n\n\n\n6.2.1 Yaml header\n\nAn (optional) YAML header demarcated by three dashes (—) on either end.\n\n---\ntitle: \"Module 1 Introduction to R, RStudio, and Qurto\"\nauthor: \"Jae Jung\"\ndate: '2025-01-14 00:51:07'\nformat: \n  html: \n    toc: true\n    toc-depth: 4\n    embed-resources: true\neditor: visual\nexecute: \n  freeze: auto\n---\n\n6.2.2 Code chunk\n```{r}\n#| label: demo-code-chunk\n#| include: true\n\n#install.packages(\"tidyverse\")\n#install.packages(\"palmerpenguins\")\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n```\n\n6.2.3 Markdown text\n\nText area is all the canvas area within qmd file other than Yaml header and code chun areas.\nQuarto uses markdown syntax for text.\n\nIf using the visual editor, you won’t need to learn much markdown syntax for authoring your document, as you can use the menus and shortcuts to add a header, bold text, insert a table, etc.\nIf using the source editor, you can achieve these with markdown expressions like ##, bold, etc.\n\n\nYou can use text area for typing pros as you would normally do in MS Word or Google Doc.\n\nText with formatting, including section headers, hyperlinks, an embedded image, and an inline code chunk.\n\n\nYou can also style it.\n\nBold\nItalicize\nHeadings: h1, h2, h3\n\n\n\n\n\n\n\n\n\nCoding Tips\n\n\n\n\nNote: It is possible to type the code and run in the text area.\n\n\nHowever, your code in the text area won’t be read and rendered into a document unless your codes are inside a code chunk. - During the rendering, RStudio will be in auto piolt mode and will treat everything in the text area a text except for in-line coding, which will be demonstrated later.\nThus, do not code in the text area."
+  },
+  {
+    "objectID": "index.html#qurto-interface",
+    "href": "index.html#qurto-interface",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n6.3 Qurto Interface",
+    "text": "6.3 Qurto Interface\n\n6.3.1 Visual editor\n\nEasier to those who are familiar with MS Word or Google Doc.\nctrl/commnad + /\nAdding table by hand is cumbersome; use the visual mode as in Section 9.8.\nAdding an figure/image\n\n\n\n\n\n\nfig-visual-editor\n\n\n6.3.2 Source editor\n\nEasier to those who are familiar with R Script file or Rmd file.\nUseful for debugging any Quarto syntax errors since it’s often easier to catch these in plain text.\nHandy reference sheet available at the RStudio menue: Help &gt; Markdown Quick Reference\n\nThe guide below shows how to use Pandoc’s Markdown for authoring Quarto documents in the source editor."
+  },
+  {
+    "objectID": "index.html#html",
+    "href": "index.html#html",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n7.1 HTML",
+    "text": "7.1 HTML\nNote: Practice creating documents in each form."
+  },
+  {
+    "objectID": "index.html#pdf",
+    "href": "index.html#pdf",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n7.2 pdf",
+    "text": "7.2 pdf\n\nIn order to create PDFs you will need to install a recent distribution of LaTeX.\n\nUse TinyTeX (which is based on TexLive), which you can install with the following command:\nTerminal\nquarto install tinytex"
+  },
+  {
+    "objectID": "index.html#ms-word",
+    "href": "index.html#ms-word",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n7.3 MS Word",
+    "text": "7.3 MS Word\n---\ntitle: \"Testing for Word document\"\nformat: docx\neditor: visual\n---"
+  },
+  {
+    "objectID": "index.html#revealjs-presentation",
+    "href": "index.html#revealjs-presentation",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n7.4 revealjs presentation",
+    "text": "7.4 revealjs presentation\n---\ntitle: \"Testing for Presentation\"\nformat: revealjs\neditor: visual\n---"
+  },
+  {
+    "objectID": "index.html#dashboard",
+    "href": "index.html#dashboard",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n7.5 Dashboard",
+    "text": "7.5 Dashboard\n---\ntitle: \"Testing for Presentation\"\nformat: dashboard\neditor: visual\n---"
+  },
+  {
+    "objectID": "index.html#rendering-to-all-formats.",
+    "href": "index.html#rendering-to-all-formats.",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n8.1 Rendering to all formats.",
+    "text": "8.1 Rendering to all formats.\n\nIf you would like to render to all formats, you can do so with the quarto package, which provides an R interface to the Quarto CLI. - For example, to render the current document, use quarto::quarto_render(). You can also specify the name of the document you want to render as well as the output format(s).\n\n\n```{r}\n#| warning: false\n#| eval: false\nquarto::quarto_render(\n  \"test.qmd\", \n  output_format = c(\"pdf\", \"docx\")\n)\n```"
+  },
+  {
+    "objectID": "index.html#sec-text-formatting",
+    "href": "index.html#sec-text-formatting",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n9.1 Text formatting",
+    "text": "9.1 Text formatting\n\nitalic\nbold\nstrikeout\ncode\nsuperscript2\nsubscript2\n\nUsing spans\n\nunderline\nsmall caps\ncan change the font color to red"
+  },
+  {
+    "objectID": "index.html#headings",
+    "href": "index.html#headings",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n9.2 Headings",
+    "text": "9.2 Headings\n# 1st Level Header\n\n## 2nd Level Header\n\n### 3rd Level Header\nNote: There must be a space between the last pound and the first letter of the headings."
+  },
+  {
+    "objectID": "index.html#lists",
+    "href": "index.html#lists",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n9.3 Lists",
+    "text": "9.3 Lists\n\n9.3.1 Unnumbered list\n\nBulleted list item 1\n\nsub-item 1\nsub-itme 2\n\nsub-sub-item 1\n\n\n\n\nItem 2\n\nItem 2a\nItem 2b\n\n\n\n9.3.2 Numbered List\n\nNumbered list item 1\nItem 2. The numbers are incremented automatically in the output.\n\nsub-item 1\n\nsub-sub-item 1"
+  },
+  {
+    "objectID": "index.html#links-and-images",
+    "href": "index.html#links-and-images",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n9.4 Links and images",
+    "text": "9.4 Links and images\nhttps://www.cpp.edu/cba/customer-insights-lab/index.shtml\nCenter for Customer Insights and Digital Marketing\n\n\nCCIDM Logo"
+  },
+  {
+    "objectID": "index.html#sec-callout-blocks",
+    "href": "index.html#sec-callout-blocks",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n9.5 Callout Blocks",
+    "text": "9.5 Callout Blocks\n\n\n\n\n\n\nNote\n\n\n\n\nCallouts are markdown divs that have special callout attributes.\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\n\nWe can insert a callout using the Insert Anything tool."
+  },
+  {
+    "objectID": "index.html#blockquote",
+    "href": "index.html#blockquote",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n9.6 Blockquote",
+    "text": "9.6 Blockquote\n\nBlockquote highlights the prose by making it bigger."
+  },
+  {
+    "objectID": "index.html#panel-tabset",
+    "href": "index.html#panel-tabset",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n9.7 Panel Tabset",
+    "text": "9.7 Panel Tabset\n\nAn example is provided in section Section 5.2."
+  },
+  {
+    "objectID": "index.html#sec-tables",
+    "href": "index.html#sec-tables",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n9.8 Tables",
+    "text": "9.8 Tables\n\nUsing visual mode\n\n\nMSDM Program Curriculum1\n\n\n\n\n\n\n\n\nDigital Marketing Strategy Emphasis\nMarketing Analytics Emphasis\n\n\n\nMajor Required\n20 units\n20 units\n\n\nMajor Electives\n14 units\n14 units\n\n\nEmphasis Recommended\n10 units\n10 units\n\n\nEmphasis Other\n4 units\n4 units\n\n\nTotal Units\n34 units\n34 units"
+  },
+  {
+    "objectID": "index.html#cell-output",
+    "href": "index.html#cell-output",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n9.9 Cell output",
+    "text": "9.9 Cell output\n\nBy default, the code and its output are displayed within the rendered document.\n\n\nshowing code: echo: true\n\nHiding code: echo: false\n\nCan be done globally at Yaml or locally at cell.\n\nGlobal setting\n\n\n\n\n9.9.1 Echo: true/false\n---\ntitle: \"Quarto Computations\"\nexecute:\n  echo: false\n---\n\nLocal setting\n\nTo override code hiding global setting at Yaml, add the echo: true cell option as shown below in the chunk labelled scatterplot.\n\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\necho: true prints all the codes but not the cell setting such as label and echo.\n\n\n\n9.9.2 Echo: fenced\n\nGreat for teaching or publication purpose\nCode chunk printed except for echo: fenced\n\n\n\n```{python}\n#| ouput: false\n#| code-overflow: wrap\n1 + 1\n```\n\n2"
+  },
+  {
+    "objectID": "index.html#information-about-mpg-data-set",
+    "href": "index.html#information-about-mpg-data-set",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n10.1 Information about mpg data set",
+    "text": "10.1 Information about mpg data set\n\nThere are a lot of built-in data set ready for use in R.\nmpg is one of the data set\n\n\n```{r data info}\n# ?mpg  # help\n# help(mpg) # another way of looking up help\n```"
+  },
+  {
+    "objectID": "index.html#load-up-data-and-set-up",
+    "href": "index.html#load-up-data-and-set-up",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n10.2 Load up data and set-up",
+    "text": "10.2 Load up data and set-up\n\n```{r prep}\nlibrary(tidyverse)\nlibrary(GGally)\n\nmpg # print mpg dataset\ndf &lt;- mpg # assigning the data set to a new name\nhead(df)\ntheme_set(theme_light()) #set the graphics theme to a light style for this R session.\n```\n\n# A tibble: 234 × 11\n   manufacturer model      displ  year   cyl trans drv     cty   hwy fl    class\n   &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;\n 1 audi         a4           1.8  1999     4 auto… f        18    29 p     comp…\n 2 audi         a4           1.8  1999     4 manu… f        21    29 p     comp…\n 3 audi         a4           2    2008     4 manu… f        20    31 p     comp…\n 4 audi         a4           2    2008     4 auto… f        21    30 p     comp…\n 5 audi         a4           2.8  1999     6 auto… f        16    26 p     comp…\n 6 audi         a4           2.8  1999     6 manu… f        18    26 p     comp…\n 7 audi         a4           3.1  2008     6 auto… f        18    27 p     comp…\n 8 audi         a4 quattro   1.8  1999     4 manu… 4        18    26 p     comp…\n 9 audi         a4 quattro   1.8  1999     4 auto… 4        16    25 p     comp…\n10 audi         a4 quattro   2    2008     4 manu… 4        20    28 p     comp…\n# ℹ 224 more rows\n# A tibble: 6 × 11\n  manufacturer model displ  year   cyl trans      drv     cty   hwy fl    class \n  &lt;chr&gt;        &lt;chr&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; \n1 audi         a4      1.8  1999     4 auto(l5)   f        18    29 p     compa…\n2 audi         a4      1.8  1999     4 manual(m5) f        21    29 p     compa…\n3 audi         a4      2    2008     4 manual(m6) f        20    31 p     compa…\n4 audi         a4      2    2008     4 auto(av)   f        21    30 p     compa…\n5 audi         a4      2.8  1999     6 auto(l5)   f        16    26 p     compa…\n6 audi         a4      2.8  1999     6 manual(m5) f        18    26 p     compa…"
+  },
+  {
+    "objectID": "index.html#research-hypothesis-or-research-questions",
+    "href": "index.html#research-hypothesis-or-research-questions",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n10.3 Research Hypothesis or Research Questions",
+    "text": "10.3 Research Hypothesis or Research Questions\n\nH1: City mileage will be negatively associated with the size of cylinder. or\nRQ1: Would city mileage differ by cylinder size of vehicles? If so, how?"
+  },
+  {
+    "objectID": "index.html#visualize-the-data-and-assess-the-output",
+    "href": "index.html#visualize-the-data-and-assess-the-output",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n10.4 Visualize the data and assess the output",
+    "text": "10.4 Visualize the data and assess the output\n\n10.4.1 Density Plot\n\n\nis for continuous variable.\n\nIn Figure 1, cty is a continuous variable.\n\n\nalpha argument determines the thickness of the color; smaller the number the more transparent it would be.\nfill argument have a different effect depending on whether we add it inside or outside aes() function.\nfactor() transforms the data into a factor, categorical data type.\n\n\n```{r Density plot}\n#| label: fig-cty-by-cyl-density\n#| fig-cap: The impact of cylinder size on the city mileage using density plot\n\ng &lt;- ggplot(df, aes(x = cty)) # there is only one variable, \"cty\"\ng + geom_density(aes(fill=factor(cyl)), alpha=0.8) +\n  labs(title = \"Density Plot\",\n       subtitle = \"City Mileage Grouped by Number of Cylinders\",\n       caption = \"Source: mpg dataset\",\n       x= \"city Mileage\",      \n       fill=\"# Cylinders\")\n```\n\n\n\n\n\n\nFigure 1: The impact of cylinder size on the city mileage using density plot\n\n\n\n\n\n10.4.2 Histogram\n\nis for continuous variable.\n\nin Figure 2, the cty is continuous variable.\n\n\n\n\n```{r Histogram}\n#| label: fig-cty-by-cyl-histogram\n#| fig-cap: The impact of cylinder size on the city mileage using histogram\n\ndf |&gt; \nggplot(aes(x = cty, fill=factor(cyl))) + \ngeom_histogram(color = \"white\", alpha=0.8) + \n  facet_wrap(~ factor(cyl), ncol = 1) +\n  labs(title = \"City Mileage Grouped by Number of Cylinders\",\n       subtitle = \"Histogram\",\n       caption = \"Source: mpg dataset\",\n       x = \"City Mileage\",\n       y = \"Frequency / # of Cars\",\n       fill = \"# of Cylinder\"\n       )\n```\n\n\n\n\n\n\nFigure 2: The impact of cylinder size on the city mileage using histogram\n\n\n\n\n\n10.4.3 Summary Insights from both plots\n\n\n\n\n\n\nImportant\n\n\n\nAs can be seen in both Figure 1 and Figure 2, cylinder size is negatively related to the city mileage.\n\n\n\n10.4.4 Bar Plot\n\nBar plot is usually used to count one categorical variable, but it can also be used for categorical x and continuous y using “stat = identity”.\nCan we plot the impact of cylinder on city mileage using bar plot?\nThe answer is yes, but a caution is needed to avoid a mistake.\nLet’s consider Figure 3 (a) and Figure 3 (b) below.\n\n```{r Barplot}\n#| message: false\n#| label: fig-cty-by-cyl-bar\n#| fig-cap: The impact of cylinder size on the city mileage using barplots\n#| fig-subcap:\n#|   - \"cty on Y-axis by summing them by cylinder size\"\n#|   - \"cty on Y-axis by averaging them per cylinder size during the wrangling stage\"\n#| layout-ncol: 2\n\ndf |&gt; \nggplot(aes(x = factor(cyl), y = cty)) + \ngeom_col(aes(fill=factor(cyl)), alpha=0.8, show.legend = FALSE) + \n  labs(title = \"City Mileage Grouped by Number of Cylinders\",\n       subtitle = \"Barplot\",\n       caption = \"Source: mpg dataset\",\n       x = \"# of Cylnders\",\n       y = \"Sum of City mileages\" \n       )\n\ndf |&gt;  \n  group_by(cyl) |&gt;  # group data by cyl\n  summarize(cty_mean = mean(cty), .groups = \"drop\") |&gt;  # calculate mean of cty and call it \"cty_mean\"\nggplot(aes(x = factor(cyl), y = cty_mean)) + \ngeom_col(aes(fill=factor(cyl)), show.legend = FALSE) + \n  labs(title = \"City Mileage Grouped by Number of Cylinders\",\n       subtitle = \"Barplot\",\n       caption = \"Source: mpg dataset\",\n       x = \"# of Cylnders\",\n       y = \"Average of City mileage\"\n       )\n```\n\n\n\n\n\n\n\n\n\n(a) cty on Y-axis by summing them by cylinder size\n\n\n\n\n\n\n\n\n\n(b) cty on Y-axis by averaging them per cylinder size during the wrangling stage\n\n\n\n\n\n\nFigure 3: The impact of cylinder size on the city mileage using barplots\n\n\n\n\n\n\n\n\nLessons\n\n\n\nWhen using geom_bar or geom_col with continuous y variable, make sure y is expressed as an an average, not sum.\n\n\n\n10.4.5 Correlation\n```{r}\n#| message: false\n#| label: fig-GGally\n#| fig-cap: Correlations table using GGally package\n#| fig-subcap:\n#|   - \"correlations using ggcorr\"\n#|   - \"correlations using ggpairs\"\n#| layout-ncol: 2\n#| column: page\n\ndf %&gt;% \n  select(cyl, displ, cty, hwy) %&gt;% \n  ggcorr(label = TRUE, label_round = 2) \n\ndf %&gt;% \n  select(cyl, displ, cty, hwy) %&gt;% # select all continuous variables in the data\n  ggpairs()+\n  theme_bw()\n```\n\n\n\n\n\n\n\n\n\n(a) correlations using ggcorr\n\n\n\n\n\n\n\n\n\n(b) correlations using ggpairs\n\n\n\n\n\n\nFigure 4: Correlations table using GGally package\n\n\n\n10.4.6 Scatter plot with regression line\n\n```{r geom point}\ndf %&gt;% \n  select(cyl, cty) %&gt;% \n  ggplot(aes(x = cyl, y = cty))+\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  geom_jitter()+\n  labs(title = \"City Mileage versus Cylinders\",\n       subtitle = \"Scatter and jitter plot with regression line\",\n       caption = \"Source: mpg dataset\",\n       x = \"# of Cylnders\",\n       y = \"City mileage\", \n       )\n```\n\n\n\n\n\n\n\n\n10.4.7 gt and gtsummary tables\n\n```{r}\n#| label: tbl-mpg-regression\n#| tbl-cap: Regression of cty on cyl\n\nlibrary(gtsummary)\nlibrary(gt)\n\ndf |&gt; \n  lm(cty ~ cyl, data = _) |&gt; \n  tbl_regression(\n  ) |&gt; \n  add_n() |&gt; \n  modify_header(label = \"**Variables**\") |&gt; \n  as_gt() |&gt; \n  tab_header(title = md(\"**Impact of Cylinder Size on City Mileage (cty)**\"),\n             subtitle = md(\"with `mpg` data\"))\n\nm_reg &lt;- df |&gt; \n  lm(cty ~ cyl, data = _) \n```\n\n\nTable 1: Regression of cty on cyl\n\n\n\n\n\n\n\nImpact of Cylinder Size on City Mileage (cty)\n\n\nwith mpg data\n\n\nVariables\nN\nBeta\n\n95% CI1\n\np-value\n\n\n\ncyl\n234\n-2.1\n-2.3, -1.9\n&lt;0.001\n\n\n\n1 CI = Confidence Interval"
+  },
+  {
+    "objectID": "index.html#conclusion",
+    "href": "index.html#conclusion",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n10.5 Conclusion",
+    "text": "10.5 Conclusion\n\n\n\n\n\n\nImportant\n\n\n\nAs shown in all the correct charts above, it appears that the number of cylinders is negatively related to city mileages. One may proceeds to use an inferential statistics as in Table 1 to draw a formal conclusion.\n\nAccording to the correlation analysis above - Figure 4 (a) and Figure 4 (b), the cylinder and the city mileage are highly negatively correlated (r = -0.81). The regressing city miles on cylinder size shows statistically significant negative impact of cylinder size on the city miles such that one unit increase in cylinder size leads to the -2.13 miles decrease in the city mileage."
+  },
+  {
+    "objectID": "index.html#resources-for-this-module",
+    "href": "index.html#resources-for-this-module",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n11.1 Resources for this module",
+    "text": "11.1 Resources for this module\n\nR for Data Science (2nd eds): https://r4ds.hadley.nz/\n\nQuarto Guide: https://quarto.org/docs/get-started/hello/rstudio.html\n\nQuarto Cheatsheet: &lt;https://rstudio.github.io/cheatsheets/html/quarto.html&gt;\nQuarto presentation Workshop: https://rstudio-conf-2022.github.io/get-started-quarto/materials/05-presentations.html#/presentations"
+  },
+  {
+    "objectID": "index.html#resources-in-r-community-1",
+    "href": "index.html#resources-in-r-community-1",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "\n11.2 Resources in R Community",
+    "text": "11.2 Resources in R Community\n\nTidy Tuesday\n\nR Facebook Groups\n\nR Statistical Software Group\n\n\n\nStackoverflow\n\nGood for general questions\n\n\nYouTube – Most effective\nX\nother social media"
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "Module 1 Introduction to Literate Programming with Quarto",
+    "section": "Footnotes",
+    "text": "Footnotes\n\nThis is a table caption added when a table was created in the visual mode.↩︎"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n\n\n\n\n\nNote\n\n\n\nThis is the lecture note for M01-1: Introdution to Literate Programming."
+  }
+]
