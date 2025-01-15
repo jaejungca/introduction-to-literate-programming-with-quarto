@@ -188,17 +188,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul>
 </li>
   <li>
-<a href="#quarto-document-types" id="toc-quarto-document-types" class="nav-link" data-scroll-target="#quarto-document-types"><span class="header-section-number">7</span> Quarto Document types</a>
+<a href="#quarto-document-types" id="toc-quarto-document-types" class="nav-link" data-scroll-target="#quarto-document-types"><span class="header-section-number">7</span> Quarto Document Types</a>
   <ul>
 <li><a href="#html" id="toc-html" class="nav-link" data-scroll-target="#html"><span class="header-section-number">7.1</span> HTML</a></li>
-  <li><a href="#pdf" id="toc-pdf" class="nav-link" data-scroll-target="#pdf"><span class="header-section-number">7.2</span> pdf</a></li>
+  <li><a href="#pdf" id="toc-pdf" class="nav-link" data-scroll-target="#pdf"><span class="header-section-number">7.2</span> PDF</a></li>
   <li><a href="#ms-word" id="toc-ms-word" class="nav-link" data-scroll-target="#ms-word"><span class="header-section-number">7.3</span> MS Word</a></li>
-  <li><a href="#revealjs-presentation" id="toc-revealjs-presentation" class="nav-link" data-scroll-target="#revealjs-presentation"><span class="header-section-number">7.4</span> revealjs presentation</a></li>
+  <li><a href="#revealjs-presentation" id="toc-revealjs-presentation" class="nav-link" data-scroll-target="#revealjs-presentation"><span class="header-section-number">7.4</span> Revealjs Presentation</a></li>
   <li><a href="#dashboard" id="toc-dashboard" class="nav-link" data-scroll-target="#dashboard"><span class="header-section-number">7.5</span> Dashboard</a></li>
   </ul>
 </li>
   <li>
-<a href="#multiple-formats" id="toc-multiple-formats" class="nav-link" data-scroll-target="#multiple-formats"><span class="header-section-number">8</span> Multiple formats</a>
+<a href="#multiple-formats" id="toc-multiple-formats" class="nav-link" data-scroll-target="#multiple-formats"><span class="header-section-number">8</span> Multiple Formats</a>
   <ul>
 <li><a href="#rendering-to-all-formats." id="toc-rendering-to-all-formats." class="nav-link" data-scroll-target="#rendering-to-all-formats."><span class="header-section-number">8.1</span> Rendering to all formats.</a></li>
   </ul>
@@ -584,12 +584,12 @@ Tip
 <section id="yaml-header" class="level3" data-number="6.2.1"><h3 data-number="6.2.1" class="anchored" data-anchor-id="yaml-header">
 <span class="header-section-number">6.2.1</span> Yaml header</h3>
 <blockquote class="blockquote">
-<p>An (optional) YAML header demarcated by three dashes (—) on either end.</p>
+<p>An (optional) YAML header demarcated by three dashes (<code>---</code>) on either end.</p>
 </blockquote>
 <pre><code>---
 title: "Module 1 Introduction to R, RStudio, and Qurto"
 author: "Jae Jung"
-date: '2025-01-14 00:51:07'
+date: '2025-01-14 19:29:54'
 format: 
   html: 
     toc: true
@@ -664,7 +664,7 @@ Coding Tips
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="https://r4ds.hadley.nz/quarto#fig-visual-editor"><img src="https://r4ds.hadley.nz/quarto/quarto-visual-editor.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="visual editor graphic"></a></p>
+<figure class="figure"><p><a href="https://r4ds.hadley.nz/quarto#fig-visual-editor"><img src="quarto-visual-editor.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="visual editor graphic"></a></p>
 </figure>
 </div>
 <figcaption>fig-visual-editor</figcaption></figure>
@@ -678,18 +678,18 @@ Coding Tips
 </li>
 <li>The guide below shows how to use Pandoc’s Markdown for authoring Quarto documents in the source editor.</li>
 </ul></section></section></section><section id="quarto-document-types" class="level1" data-number="7"><h1 data-number="7">
-<span class="header-section-number">7</span> Quarto Document types</h1>
+<span class="header-section-number">7</span> Quarto Document Types</h1>
 <section id="html" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="html">
 <span class="header-section-number">7.1</span> HTML</h2>
 <p><em>Note</em>: Practice creating documents in each form.</p>
 </section><section id="pdf" class="level2" data-number="7.2"><h2 data-number="7.2" class="anchored" data-anchor-id="pdf">
-<span class="header-section-number">7.2</span> pdf</h2>
+<span class="header-section-number">7.2</span> PDF</h2>
 <ul>
 <li><p>In order to create PDFs you will need to install a recent distribution of <a href="https://www.latex-project.org/">LaTeX</a>.</p></li>
 <li>
 <p>Use TinyTeX (which is based on TexLive), which you can install with the following command:</p>
-<pre><code>Terminal</code></pre>
-<pre><code>quarto install tinytex</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="ex">Terminal</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="ex">quarto</span> install tinytex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </li>
 </ul></section><section id="ms-word" class="level2" data-number="7.3"><h2 data-number="7.3" class="anchored" data-anchor-id="ms-word">
 <span class="header-section-number">7.3</span> MS Word</h2>
@@ -699,7 +699,7 @@ format: docx
 editor: visual
 ---</code></pre>
 </section><section id="revealjs-presentation" class="level2" data-number="7.4"><h2 data-number="7.4" class="anchored" data-anchor-id="revealjs-presentation">
-<span class="header-section-number">7.4</span> revealjs presentation</h2>
+<span class="header-section-number">7.4</span> Revealjs Presentation</h2>
 <pre><code>---
 title: "Testing for Presentation"
 format: revealjs
@@ -713,7 +713,7 @@ format: dashboard
 editor: visual
 ---</code></pre>
 </section></section><section id="multiple-formats" class="level1" data-number="8"><h1 data-number="8">
-<span class="header-section-number">8</span> Multiple formats</h1>
+<span class="header-section-number">8</span> Multiple Formats</h1>
 <p>Some documents you create will have only a single output format, however in many cases it will be desirable to support multiple formats. Let’s add the <code>html</code> and <code>docx</code> formats to our document and modify some options specific to each format.</p>
 <pre><code>---
 title: "Housing Prices"
@@ -901,6 +901,8 @@ Important
 </tbody>
 </table></section><section id="cell-output" class="level2" data-number="9.9"><h2 data-number="9.9" class="anchored" data-anchor-id="cell-output">
 <span class="header-section-number">9.9</span> Cell output</h2>
+<section id="echo-truefalse" class="level3" data-number="9.9.1"><h3 data-number="9.9.1" class="anchored" data-anchor-id="echo-truefalse">
+<span class="header-section-number">9.9.1</span> Echo: true/false</h3>
 <blockquote class="blockquote">
 <p>By default, the code and its output are displayed within the rendered document.</p>
 </blockquote>
@@ -913,19 +915,21 @@ Important
 <ul>
 <li><strong>Global setting</strong></li>
 </ul>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb18-1"><a href="#cb18-1"></a><span class="pp">---</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Quarto Computations"</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>
+<strong>Local setting</strong>
+<ul>
+<li>To override code hiding global setting at Yaml, add the <code>echo: true</code> cell option as shown below in the chunk labelled <code>scatterplot</code>.</li>
+</ul>
 </li>
 </ul>
-<section id="echo-truefalse" class="level3" data-number="9.9.1"><h3 data-number="9.9.1" class="anchored" data-anchor-id="echo-truefalse">
-<span class="header-section-number">9.9.1</span> Echo: true/false</h3>
-<pre><code>---
-title: "Quarto Computations"
-execute:
-  echo: false
----</code></pre>
-<ul>
-<li><strong>Local setting</strong></li>
+</li>
 </ul>
-<p>To override code hiding global setting at Yaml, add the <code>echo: true</code> cell option as shown below in the chunk labelled <code>scatterplot</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> hwy, <span class="at">y =</span> cty, <span class="at">color =</span> cyl)) <span class="sc">+</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
@@ -1299,23 +1303,23 @@ Figure&nbsp;4: Correlations table using GGally package
 Table&nbsp;1: Regression of cty on cyl
 </figcaption><div aria-describedby="tbl-mpg-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="opxlkyvuvx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#opxlkyvuvx table {
+<div id="botclwhfhm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#botclwhfhm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#opxlkyvuvx thead, #opxlkyvuvx tbody, #opxlkyvuvx tfoot, #opxlkyvuvx tr, #opxlkyvuvx td, #opxlkyvuvx th {
+#botclwhfhm thead, #botclwhfhm tbody, #botclwhfhm tfoot, #botclwhfhm tr, #botclwhfhm td, #botclwhfhm th {
   border-style: none;
 }
 
-#opxlkyvuvx p {
+#botclwhfhm p {
   margin: 0;
   padding: 0;
 }
 
-#opxlkyvuvx .gt_table {
+#botclwhfhm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1341,12 +1345,12 @@ Table&nbsp;1: Regression of cty on cyl
   border-left-color: #D3D3D3;
 }
 
-#opxlkyvuvx .gt_caption {
+#botclwhfhm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#opxlkyvuvx .gt_title {
+#botclwhfhm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1358,7 +1362,7 @@ Table&nbsp;1: Regression of cty on cyl
   border-bottom-width: 0;
 }
 
-#opxlkyvuvx .gt_subtitle {
+#botclwhfhm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1370,7 +1374,7 @@ Table&nbsp;1: Regression of cty on cyl
   border-top-width: 0;
 }
 
-#opxlkyvuvx .gt_heading {
+#botclwhfhm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1382,13 +1386,13 @@ Table&nbsp;1: Regression of cty on cyl
   border-right-color: #D3D3D3;
 }
 
-#opxlkyvuvx .gt_bottom_border {
+#botclwhfhm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#opxlkyvuvx .gt_col_headings {
+#botclwhfhm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1403,7 +1407,7 @@ Table&nbsp;1: Regression of cty on cyl
   border-right-color: #D3D3D3;
 }
 
-#opxlkyvuvx .gt_col_heading {
+#botclwhfhm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1423,7 +1427,7 @@ Table&nbsp;1: Regression of cty on cyl
   overflow-x: hidden;
 }
 
-#opxlkyvuvx .gt_column_spanner_outer {
+#botclwhfhm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1435,15 +1439,15 @@ Table&nbsp;1: Regression of cty on cyl
   padding-right: 4px;
 }
 
-#opxlkyvuvx .gt_column_spanner_outer:first-child {
+#botclwhfhm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#opxlkyvuvx .gt_column_spanner_outer:last-child {
+#botclwhfhm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#opxlkyvuvx .gt_column_spanner {
+#botclwhfhm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1455,11 +1459,11 @@ Table&nbsp;1: Regression of cty on cyl
   width: 100%;
 }
 
-#opxlkyvuvx .gt_spanner_row {
+#botclwhfhm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#opxlkyvuvx .gt_group_heading {
+#botclwhfhm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1485,7 +1489,7 @@ Table&nbsp;1: Regression of cty on cyl
   text-align: left;
 }
 
-#opxlkyvuvx .gt_empty_group_heading {
+#botclwhfhm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1500,15 +1504,15 @@ Table&nbsp;1: Regression of cty on cyl
   vertical-align: middle;
 }
 
-#opxlkyvuvx .gt_from_md > :first-child {
+#botclwhfhm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#opxlkyvuvx .gt_from_md > :last-child {
+#botclwhfhm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#opxlkyvuvx .gt_row {
+#botclwhfhm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1527,7 +1531,7 @@ Table&nbsp;1: Regression of cty on cyl
   overflow-x: hidden;
 }
 
-#opxlkyvuvx .gt_stub {
+#botclwhfhm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1540,7 +1544,7 @@ Table&nbsp;1: Regression of cty on cyl
   padding-right: 5px;
 }
 
-#opxlkyvuvx .gt_stub_row_group {
+#botclwhfhm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1554,15 +1558,15 @@ Table&nbsp;1: Regression of cty on cyl
   vertical-align: top;
 }
 
-#opxlkyvuvx .gt_row_group_first td {
+#botclwhfhm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#opxlkyvuvx .gt_row_group_first th {
+#botclwhfhm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#opxlkyvuvx .gt_summary_row {
+#botclwhfhm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1572,16 +1576,16 @@ Table&nbsp;1: Regression of cty on cyl
   padding-right: 5px;
 }
 
-#opxlkyvuvx .gt_first_summary_row {
+#botclwhfhm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#opxlkyvuvx .gt_first_summary_row.thick {
+#botclwhfhm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#opxlkyvuvx .gt_last_summary_row {
+#botclwhfhm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1591,7 +1595,7 @@ Table&nbsp;1: Regression of cty on cyl
   border-bottom-color: #D3D3D3;
 }
 
-#opxlkyvuvx .gt_grand_summary_row {
+#botclwhfhm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1601,7 +1605,7 @@ Table&nbsp;1: Regression of cty on cyl
   padding-right: 5px;
 }
 
-#opxlkyvuvx .gt_first_grand_summary_row {
+#botclwhfhm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1611,7 +1615,7 @@ Table&nbsp;1: Regression of cty on cyl
   border-top-color: #D3D3D3;
 }
 
-#opxlkyvuvx .gt_last_grand_summary_row_top {
+#botclwhfhm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1621,11 +1625,11 @@ Table&nbsp;1: Regression of cty on cyl
   border-bottom-color: #D3D3D3;
 }
 
-#opxlkyvuvx .gt_striped {
+#botclwhfhm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#opxlkyvuvx .gt_table_body {
+#botclwhfhm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1634,7 +1638,7 @@ Table&nbsp;1: Regression of cty on cyl
   border-bottom-color: #D3D3D3;
 }
 
-#opxlkyvuvx .gt_footnotes {
+#botclwhfhm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1648,7 +1652,7 @@ Table&nbsp;1: Regression of cty on cyl
   border-right-color: #D3D3D3;
 }
 
-#opxlkyvuvx .gt_footnote {
+#botclwhfhm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1657,7 +1661,7 @@ Table&nbsp;1: Regression of cty on cyl
   padding-right: 5px;
 }
 
-#opxlkyvuvx .gt_sourcenotes {
+#botclwhfhm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1671,7 +1675,7 @@ Table&nbsp;1: Regression of cty on cyl
   border-right-color: #D3D3D3;
 }
 
-#opxlkyvuvx .gt_sourcenote {
+#botclwhfhm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1679,72 +1683,72 @@ Table&nbsp;1: Regression of cty on cyl
   padding-right: 5px;
 }
 
-#opxlkyvuvx .gt_left {
+#botclwhfhm .gt_left {
   text-align: left;
 }
 
-#opxlkyvuvx .gt_center {
+#botclwhfhm .gt_center {
   text-align: center;
 }
 
-#opxlkyvuvx .gt_right {
+#botclwhfhm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#opxlkyvuvx .gt_font_normal {
+#botclwhfhm .gt_font_normal {
   font-weight: normal;
 }
 
-#opxlkyvuvx .gt_font_bold {
+#botclwhfhm .gt_font_bold {
   font-weight: bold;
 }
 
-#opxlkyvuvx .gt_font_italic {
+#botclwhfhm .gt_font_italic {
   font-style: italic;
 }
 
-#opxlkyvuvx .gt_super {
+#botclwhfhm .gt_super {
   font-size: 65%;
 }
 
-#opxlkyvuvx .gt_footnote_marks {
+#botclwhfhm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#opxlkyvuvx .gt_asterisk {
+#botclwhfhm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#opxlkyvuvx .gt_indent_1 {
+#botclwhfhm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#opxlkyvuvx .gt_indent_2 {
+#botclwhfhm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#opxlkyvuvx .gt_indent_3 {
+#botclwhfhm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#opxlkyvuvx .gt_indent_4 {
+#botclwhfhm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#opxlkyvuvx .gt_indent_5 {
+#botclwhfhm .gt_indent_5 {
   text-indent: 25px;
 }
 
-#opxlkyvuvx .katex-display {
+#botclwhfhm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#opxlkyvuvx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#botclwhfhm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1832,7 +1836,7 @@ Important
 </li>
 <li><p>YouTube – <em>Most effective</em></p></li>
 <li><p>X</p></li>
-<li><p>other social media</p></li>
+<li><p>Other social media</p></li>
 </ul>
 
 

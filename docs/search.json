@@ -74,7 +74,7 @@
     "href": "index.html#three-areas-in-quarto-file",
     "title": "Module 1 Introduction to Literate Programming with Quarto",
     "section": "\n6.2 Three Areas in Quarto File",
-    "text": "6.2 Three Areas in Quarto File\n\nDetailed tutorials availabe at the official Quarto site\n\n\n\n6.2.1 Yaml header\n\nAn (optional) YAML header demarcated by three dashes (—) on either end.\n\n---\ntitle: \"Module 1 Introduction to R, RStudio, and Qurto\"\nauthor: \"Jae Jung\"\ndate: '2025-01-14 00:51:07'\nformat: \n  html: \n    toc: true\n    toc-depth: 4\n    embed-resources: true\neditor: visual\nexecute: \n  freeze: auto\n---\n\n6.2.2 Code chunk\n```{r}\n#| label: demo-code-chunk\n#| include: true\n\n#install.packages(\"tidyverse\")\n#install.packages(\"palmerpenguins\")\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n```\n\n6.2.3 Markdown text\n\nText area is all the canvas area within qmd file other than Yaml header and code chun areas.\nQuarto uses markdown syntax for text.\n\nIf using the visual editor, you won’t need to learn much markdown syntax for authoring your document, as you can use the menus and shortcuts to add a header, bold text, insert a table, etc.\nIf using the source editor, you can achieve these with markdown expressions like ##, bold, etc.\n\n\nYou can use text area for typing pros as you would normally do in MS Word or Google Doc.\n\nText with formatting, including section headers, hyperlinks, an embedded image, and an inline code chunk.\n\n\nYou can also style it.\n\nBold\nItalicize\nHeadings: h1, h2, h3\n\n\n\n\n\n\n\n\n\nCoding Tips\n\n\n\n\nNote: It is possible to type the code and run in the text area.\n\n\nHowever, your code in the text area won’t be read and rendered into a document unless your codes are inside a code chunk. - During the rendering, RStudio will be in auto piolt mode and will treat everything in the text area a text except for in-line coding, which will be demonstrated later.\nThus, do not code in the text area."
+    "text": "6.2 Three Areas in Quarto File\n\nDetailed tutorials availabe at the official Quarto site\n\n\n\n6.2.1 Yaml header\n\nAn (optional) YAML header demarcated by three dashes (---) on either end.\n\n---\ntitle: \"Module 1 Introduction to R, RStudio, and Qurto\"\nauthor: \"Jae Jung\"\ndate: '2025-01-14 19:29:54'\nformat: \n  html: \n    toc: true\n    toc-depth: 4\n    embed-resources: true\neditor: visual\nexecute: \n  freeze: auto\n---\n\n6.2.2 Code chunk\n```{r}\n#| label: demo-code-chunk\n#| include: true\n\n#install.packages(\"tidyverse\")\n#install.packages(\"palmerpenguins\")\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n```\n\n6.2.3 Markdown text\n\nText area is all the canvas area within qmd file other than Yaml header and code chun areas.\nQuarto uses markdown syntax for text.\n\nIf using the visual editor, you won’t need to learn much markdown syntax for authoring your document, as you can use the menus and shortcuts to add a header, bold text, insert a table, etc.\nIf using the source editor, you can achieve these with markdown expressions like ##, bold, etc.\n\n\nYou can use text area for typing pros as you would normally do in MS Word or Google Doc.\n\nText with formatting, including section headers, hyperlinks, an embedded image, and an inline code chunk.\n\n\nYou can also style it.\n\nBold\nItalicize\nHeadings: h1, h2, h3\n\n\n\n\n\n\n\n\n\nCoding Tips\n\n\n\n\nNote: It is possible to type the code and run in the text area.\n\n\nHowever, your code in the text area won’t be read and rendered into a document unless your codes are inside a code chunk. - During the rendering, RStudio will be in auto piolt mode and will treat everything in the text area a text except for in-line coding, which will be demonstrated later.\nThus, do not code in the text area."
   },
   {
     "objectID": "index.html#qurto-interface",
@@ -94,8 +94,8 @@
     "objectID": "index.html#pdf",
     "href": "index.html#pdf",
     "title": "Module 1 Introduction to Literate Programming with Quarto",
-    "section": "\n7.2 pdf",
-    "text": "7.2 pdf\n\nIn order to create PDFs you will need to install a recent distribution of LaTeX.\n\nUse TinyTeX (which is based on TexLive), which you can install with the following command:\nTerminal\nquarto install tinytex"
+    "section": "\n7.2 PDF",
+    "text": "7.2 PDF\n\nIn order to create PDFs you will need to install a recent distribution of LaTeX.\n\nUse TinyTeX (which is based on TexLive), which you can install with the following command:\nTerminal\nquarto install tinytex"
   },
   {
     "objectID": "index.html#ms-word",
@@ -108,8 +108,8 @@
     "objectID": "index.html#revealjs-presentation",
     "href": "index.html#revealjs-presentation",
     "title": "Module 1 Introduction to Literate Programming with Quarto",
-    "section": "\n7.4 revealjs presentation",
-    "text": "7.4 revealjs presentation\n---\ntitle: \"Testing for Presentation\"\nformat: revealjs\neditor: visual\n---"
+    "section": "\n7.4 Revealjs Presentation",
+    "text": "7.4 Revealjs Presentation\n---\ntitle: \"Testing for Presentation\"\nformat: revealjs\neditor: visual\n---"
   },
   {
     "objectID": "index.html#dashboard",
@@ -186,7 +186,7 @@
     "href": "index.html#cell-output",
     "title": "Module 1 Introduction to Literate Programming with Quarto",
     "section": "\n9.9 Cell output",
-    "text": "9.9 Cell output\n\nBy default, the code and its output are displayed within the rendered document.\n\n\nshowing code: echo: true\n\nHiding code: echo: false\n\nCan be done globally at Yaml or locally at cell.\n\nGlobal setting\n\n\n\n\n9.9.1 Echo: true/false\n---\ntitle: \"Quarto Computations\"\nexecute:\n  echo: false\n---\n\nLocal setting\n\nTo override code hiding global setting at Yaml, add the echo: true cell option as shown below in the chunk labelled scatterplot.\n\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\necho: true prints all the codes but not the cell setting such as label and echo.\n\n\n\n9.9.2 Echo: fenced\n\nGreat for teaching or publication purpose\nCode chunk printed except for echo: fenced\n\n\n\n```{python}\n#| ouput: false\n#| code-overflow: wrap\n1 + 1\n```\n\n2"
+    "text": "9.9 Cell output\n\n9.9.1 Echo: true/false\n\nBy default, the code and its output are displayed within the rendered document.\n\n\nshowing code: echo: true\n\nHiding code: echo: false\n\nCan be done globally at Yaml or locally at cell.\n\nGlobal setting\n\n---\ntitle: \"Quarto Computations\"\nexecute:\n  echo: false\n---\n\n\nLocal setting\n\nTo override code hiding global setting at Yaml, add the echo: true cell option as shown below in the chunk labelled scatterplot.\n\n\n\n\n\n\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\necho: true prints all the codes but not the cell setting such as label and echo.\n\n\n\n9.9.2 Echo: fenced\n\nGreat for teaching or publication purpose\nCode chunk printed except for echo: fenced\n\n\n\n```{python}\n#| ouput: false\n#| code-overflow: wrap\n1 + 1\n```\n\n2"
   },
   {
     "objectID": "index.html#information-about-mpg-data-set",
@@ -235,7 +235,7 @@
     "href": "index.html#resources-in-r-community-1",
     "title": "Module 1 Introduction to Literate Programming with Quarto",
     "section": "\n11.2 Resources in R Community",
-    "text": "11.2 Resources in R Community\n\nTidy Tuesday\n\nR Facebook Groups\n\nR Statistical Software Group\n\n\n\nStackoverflow\n\nGood for general questions\n\n\nYouTube – Most effective\nX\nother social media"
+    "text": "11.2 Resources in R Community\n\nTidy Tuesday\n\nR Facebook Groups\n\nR Statistical Software Group\n\n\n\nStackoverflow\n\nGood for general questions\n\n\nYouTube – Most effective\nX\nOther social media"
   },
   {
     "objectID": "index.html#footnotes",
