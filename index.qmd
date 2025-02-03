@@ -1,0 +1,752 @@
+---
+title: "Module 1 Introduction to Literate Programming with Quarto"
+subtitle: "Principle Assignment"
+author: "Jae Jung"
+date: '`r format(Sys.time())`'
+format: 
+  html: 
+    toc: true
+    toc-depth: 4
+    number-sections: true
+    code-line-numbers: false
+    code-fold: false
+    code-link: true
+    code-tools: true
+    embed-resources: false
+    other-links: 
+      - text: DWV 101
+        icon: award
+        href: https://www.cpp.edu/cba/customer-insights-lab/curriculum/certificate/dwv/index.shtml
+      - text: MS in Digital Marketing
+        icon: bank
+        href: https://www.cpp.edu/cba/graduate-business-programs/programs/master-degree-in-digital-marketing-and-marketing-analytics.shtml
+  pdf: default
+  #docx: default
+editor: visual
+execute: 
+  freeze: auto
+  warning: false
+  echo: fenced
+---
+
+# Overview
+
+## Learning outcomes
+
+1.  Install R and RStudio.
+2.  Describe the layout and menus of RStudio.
+3.  Compare and contrast different types of codebook in RStudio - R Scripts, Rmd, and Quarto.
+4.  Describe the operational basics necessary to perform in every projects in R
+5.  Explain typical workflow for a Quarto project in RStudio.
+6.  Explain what the reproducible research is and the role of literate coding.
+7.  Describe major authoring tools you can implement to make your Quarto document effective.
+8.  Describe some major computational options you can implement on Quartor documents.
+9.  List Quarto's capabilities that makes it an alternative to MS Office.
+10. List online resources available in R Community when you need help.
+
+## The [textbook](https://r4ds.hadley.nz/) chapters to cover:
+
+-   Ch01: Introduction to R for Data Science
+-   Ch28: Quarto
+-   Ch02: Workflow: basics
+-   Ch04: Workflow: Code style
+-   Ch06: Workflow: Scripts and projects
+-   Ch08: Getting help
+-   Ch01: Data visualization
+
+# R & R Studio
+
+-   Brief History
+-   Installation
+    1.  R: <https://www.r-project.org/>
+    2.  RStudio:
+        -   Desktop <https://posit.co/download/rstudio-desktop/>
+        -   Posit Cloud: <https://posit.cloud/>
+-   R Studio IDE menu
+-   Three major file types in RStudio
+
+# RStudio IDE
+
+-   Four quadrants
+-   Menu
+    -   Tools \> Global Options
+    -   Output location options
+        -   Manually set `working directory`
+        -   Automatic method with the `Rproj` file
+
+# Steps in Preparing for a project
+
+## 1. Start a new project
+
+-   Projects are the containers for all of your scripts
+
+1.  Press new project
+2.  Select a new or existing directory depending on your needs
+3.  Select your folder that contains your scripts
+4.  Press create project
+
+-   You should see your .proj file and others in the files panel
+
+## 2. Start a codebook and save it
+
+-   R Scripts file
+
+-   Rmd file
+
+-   Quarto file
+
+### Markdown vs. HTML
+
+Markdown and HTML are both markup languages used for creating formatted content, but they have distinct characteristics. Here's a summary of their similarities and differences:
+
+| **Feature** | **Markdown** | **HTML** |
+|------------------|---------------------------|---------------------------|
+| Syntax complexity | Simple and easy to read | More complex with specific tags |
+| Learning curve | Low, quick to learn | Steeper, requires more time to master |
+| Readability | Highly readable, even in raw form | Less readable in raw form |
+| Flexibility | Limited formatting options | Highly flexible with extensive formatting |
+| Output | Primarily static content | Dynamic web pages and applications |
+| Supported elements | Basic formatting (headings, lists, links) | Wide range of elements (forms, multimedia) |
+| Conversion | Easily converts to HTML | Cannot be directly converted to Markdown |
+| Collaborative editing | Well-suited for collaboration | Less ideal for collaborative editing |
+| Customization | Limited styling options | Extensive styling with CSS |
+| Use cases | Documentation, simple content | Complex web development, detailed layouts |
+| Browser support | Requires conversion to HTML | Natively supported by browsers |
+| Extensibility | Limited, varies by flavor | Highly extensible with JavaScript |
+
+## 3. Start literate coding
+
+# What is Quarto?
+
+-   Quarto is an open-source technical publishing system designed for creating a wide variety of documents and publications (<https://quarto.org/>)
+-   Quarto unifies the functionality of many packages from the R Markdown ecosystem (rmarkdown, bookdown, distill, xaringan, etc.) into a single consistent system as well as extends it with native support for multiple programming languages like Python and Julia in addition to R.
+-   In a way, Quarto reflects everything that was learned from expanding and supporting the R Markdown ecosystem over a decade.
+
+## Quarto Work Flow Basics (Demo)
+
+-   How to start it and save it (e.g., test.qmd)
+-   Rendering it:
+-   Source vs. visual tab interface
+-   r4ds: <https://r4ds.hadley.nz/quarto#quarto-basics>
+
+## Three Areas in Quarto File
+
+-   Detailed tutorials availabe at [the official Quarto site](https://quarto.org/docs/get-started/hello/rstudio.html)
+
+### Yaml header
+
+> An (optional) YAML header demarcated by three dashes (`---`) on either end.
+
+```         
+---
+title: "Module 1 Introduction to R, RStudio, and Qurto"
+author: "Jae Jung"
+date: '`r format(Sys.time())`'
+format: 
+  html: 
+    toc: true
+    toc-depth: 4
+    embed-resources: true
+editor: visual
+execute: 
+  freeze: auto
+---
+```
+
+### Code chunk
+
+```{{r}}
+#| label: demo-code-chunk
+#| include: true
+
+#install.packages("tidyverse")
+#install.packages("palmerpenguins")
+library(tidyverse)
+library(palmerpenguins)
+```
+
+### Markdown text
+
+-   Text area is all the canvas area within qmd file other than Yaml header and code chun areas.
+-   Quarto uses markdown syntax for text.
+    -   If using the **visual editor**, you won’t need to learn much markdown syntax for authoring your document, as you can use the menus and shortcuts to add a header, bold text, insert a table, etc.
+    -   If using the **source editor**, you can achieve these with markdown expressions like ##, **bold**, etc.
+-   You can use text area for typing pros as you would normally do in MS Word or Google Doc.
+    -   Text with formatting, including section headers, hyperlinks, an embedded image, and an inline code chunk.
+-   You can also style it.
+    -   Bold
+    -   Italicize
+    -   Headings: h1, h2, h3
+
+::: {.callout-tip title="Coding Tips"}
+[**Be Careful**]{.red-text}: do **not** ***code*** in the **text area**.
+
+-   It is possible to type the code and run in the text area.
+-   However, it won't be read and rendered into a document.
+-   During the rendering, RStudio will be in an auto-pilot mode and will treat everything in the text area as a text except for `in-line code`.
+:::
+
+## Qurto Interface
+
+### Visual editor
+
+-   Easier to those who are familiar with MS Word or Google Doc.
+-   `ctrl/commnad + /`
+-   Adding table by hand is cumbersome; use the visual mode as in @sec-tables.
+-   Adding an figure/image
+
+[![fig-visual-editor](quarto-visual-editor.png){fig-alt="visual editor graphic" fig-align="center"}](https://r4ds.hadley.nz/quarto#fig-visual-editor)
+
+### Source editor
+
+-   Easier to those who are familiar with R Script file or Rmd file.
+-   Useful for debugging any Quarto syntax errors since it’s often easier to catch these in plain text.
+-   Handy reference sheet available at the RStudio menue: *Help \> Markdown Quick Reference*
+-   The guide below shows how to use Pandoc’s Markdown for authoring Quarto documents in the source editor.
+
+# Literate Programming
+
+## Basic Operations
+
+> In the following code chunk, you will learn some basic operations in R.
+
+```{r}
+#| label: Basic-Operation
+1+1
+2*2 # *: multiplication
+2^3 # ^: use carrot to raise the base to the power of the following number.
+
+# creating an object
+message <- "Hello WOrld!" # assigning elements to a variable. Do not break between less-than sign and the hyphen.
+
+message = "Hello WOrld!" # equal sign also works.
+
+# to print,
+print(message)
+
+# to print, print function is necessary. You can just type the object and run it.
+message
+
+# An object can be any type: e.g., strings and numbers
+number <- 7 
+
+max(2,5,90,30) # maximum
+
+min(2,5,90,30) # minimum
+```
+
+## Coding Styles {#sec-coding-styles}
+
+```{r}
+#| code-fold: false
+
+#install.packages("tidyverse")
+#install.packages("palmerpenguins")
+library(tidyverse)
+library(palmerpenguins)
+```
+
+::: panel-tabset
+### Base R way of coding
+
+```{r}
+#| code-fold: false
+
+head(penguins)
+mean(penguins$bill_length_mm, na.rm = TRUE)
+```
+
+### Tidyverse way of coding
+
+```{r}
+#| code-fold: false
+
+penguins |> 
+  head()
+penguins |> 
+  pull(bill_length_mm) |> 
+  mean(na.rm = TRUE)
+```
+:::
+
+## Pipe Operator
+
+::: callout-tip
+Note that R has always multiple ways to accomplish the same goal. `|>` is called `native pipe operator`. It works the same as `%>%`, which came from `mgrittr` package that revolutionized the way we code in R, paving the trend for the modern data science in R.
+
+While the data frame, df, in @fig-cty-by-cyl-density was included inside ggplot function, the df in @fig-cty-by-cyl-histogram was the first appear in the code.
+
+The pipe operator is one important difference between base R and Tidyverse in how we code.
+:::
+
+# Quarto Document Types
+
+## HTML
+
+*Note*: Practice creating documents in each form.
+
+## PDF
+
+-   In order to create PDFs you will need to install a recent distribution of [LaTeX](https://www.latex-project.org/).
+
+-   Use TinyTeX (which is based on TexLive), which you can install with the following command:
+
+    ``` bash
+    Terminal
+    ```
+
+    ``` bash
+    quarto install tinytex
+    ```
+
+-   Then adjust YAML header
+
+```         
+---
+title: "Testing for Word document"
+format: pdf
+editor: visual
+---
+```
+
+## MS Word
+
+```         
+---
+title: "Testing for Word document"
+format: docx
+editor: visual
+---
+```
+
+## Revealjs Presentation
+
+```         
+---
+title: "Testing for Presentation"
+format: revealjs
+editor: visual
+---
+```
+
+## Dashboard
+
+```         
+---
+title: "Testing for Presentation"
+format: dashboard
+editor: visual
+---
+```
+
+# Multiple Formats
+
+Some documents you create will have only a single output format, however in many cases it will be desirable to support multiple formats. Let’s add the `html` and `docx` formats to our document and modify some options specific to each format.
+
+```         
+---
+title: "Housing Prices"
+author: "YOur Name"
+highlight-style: pygments
+format:
+  html: 
+    code-fold: true
+    html-math-method: katex
+  pdf:
+    geometry: 
+      - top=30mm
+      - left=30mm
+  docx: default
+---
+```
+
+## Rendering to all formats.
+
+> If you would like to render to all formats, you can do so with the quarto package, which provides an R interface to the Quarto CLI. - For example, to render the current document, use quarto::quarto_render(). You can also specify the name of the document you want to render as well as the output format(s).
+
+```{r}
+#| warning: false
+#| eval: false
+quarto::quarto_render(
+  "test.qmd", 
+  output_format = c("pdf", "docx")
+)
+```
+
+# Quarto Markdown Basics
+
+## Text formatting {#sec-text-formatting}
+
+1.  *italic*
+
+2.  **bold**
+
+3.  ~~strikeout~~
+
+4.  `code`
+
+5.  superscript^2^
+
+6.  subscript~2~
+
+7.  Using spans
+
+    -   [underline]{.underline}
+
+    -   [small caps]{.smallcaps}
+
+    -   can change the [font color to red]{style="color:red;"}
+
+## Headings
+
+```         
+# 1st Level Header
+
+## 2nd Level Header
+
+### 3rd Level Header
+```
+
+*Note*: There must be a space between the last pound and the first letter of the headings.
+
+## Lists
+
+### Unnumbered list
+
+-   Bulleted list item 1
+    -   sub-item 1
+    -   sub-itme 2
+        -   sub-sub-item 1
+-   Item 2
+    -   Item 2a
+    -   Item 2b
+
+### Numbered List
+
+1.  Numbered list item 1
+2.  Item 2. The numbers are incremented automatically in the output.
+    i)  sub-item 1
+        a.  sub-sub-item 1
+
+## Links and images
+
+<https://www.cpp.edu/cba/customer-insights-lab/index.shtml>
+
+[Center for Customer Insights and Digital Marketing](https://www.cpp.edu/cba/customer-insights-lab/index.shtml)
+
+![CCIDM Logo](https://www.cpp.edu/cba/customer-insights-lab/img/home/ccidm-logo-green-on-white-cropped-text.png){fig-alt="The CCIDM logo and the center's full name is spelled in small case letters"}
+
+## Callout Blocks {#sec-callout-blocks}
+
+::: callout-note
+-   Callouts are markdown divs that have special callout attributes.
+:::
+
+::: callout-important
+-   We can insert a callout using the Insert Anything tool.
+:::
+
+## Blockquote
+
+> Blockquote highlights the prose by making it bigger.
+
+## Panel Tabset
+
+-   An example is provided in section @sec-coding-styles.
+
+## Tables {#sec-tables}
+
+-   Using visual mode
+
+|   | Digital Marketing Strategy Emphasis | Marketing Analytics Emphasis |
+|-------------------|:---------------------------:|:----------------------:|
+| Major Required | 20 units | 20 units |
+| Major Electives | 14 units | 14 units |
+| Emphasis Recommended | 10 units | 10 units |
+| Emphasis Other | 4 units | 4 units |
+| ***Total Units*** | ***34 units*** | ***34 units*** |
+
+: MSDM Program Curriculum[^1]
+
+[^1]: This is a table caption added when a table was created in the visual mode.
+
+## Cell output
+
+### Echo: true/false
+
+> By default, the code and its output are displayed within the rendered document.
+
+-   showing code: `echo: true`
+
+-   Hiding code: `echo: false`
+
+-   Can be done globally at Yaml or locally at cell.
+
+    -   **Global setting**
+
+    ``` yaml
+    ---
+    title: "Quarto Computations"
+    execute:
+      echo: false
+    ---
+    ```
+
+    -   **Local setting**
+        -   To override code hiding global setting at Yaml, add the `echo: true` cell option as shown below in the chunk labelled `scatterplot`.
+
+```{r}
+#| label: scatterplot
+#| echo: true
+
+ggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +
+  geom_point(alpha = 0.5, size = 2) +
+  scale_color_viridis_c() +
+  theme_minimal()
+```
+
+::: callout-warning
+`echo: true` prints all the codes but not the cell setting such as label and echo.
+:::
+
+### Echo: fenced
+
+-   Great for teaching or publication purpose
+-   Code chunk printed except for `echo: fenced`
+
+```{python}
+#| echo: fenced
+#| ouput: false
+#| code-overflow: wrap
+1 + 1
+```
+
+# Data Visualization Workflow
+
+## Information about mpg data set
+
+-   There are a lot of built-in data set ready for use in R.
+-   mpg is one of the data set
+
+```{r data info}
+# ?mpg  # help
+# help(mpg) # another way of looking up help
+```
+
+## Load up data and set-up
+
+```{r prep}
+library(tidyverse)
+library(GGally)
+
+mpg # print mpg dataset
+df <- mpg # assigning the data set to a new name
+head(df)
+theme_set(theme_light()) #set the graphics theme to a light style for this R session.
+```
+
+## Research Hypothesis or Research Questions
+
+-   H1: City mileage will be negatively associated with the size of cylinder. or
+-   RQ1: Would city mileage differ by cylinder size of vehicles? If so, how?
+
+## Visualize the data and assess the output
+
+### Density Plot
+
+-   is for continuous variable.
+
+    -   In @fig-cty-by-cyl-density, `cty` is a continuous variable.
+
+-   alpha argument determines the thickness of the color; smaller the number the more transparent it would be.
+
+-   fill argument have a different effect depending on whether we add it inside or outside aes() function.
+
+-   factor() transforms the data into a factor, categorical data type.
+
+```{r Density plot}
+#| label: fig-cty-by-cyl-density
+#| fig-cap: The impact of cylinder size on the city mileage using density plot
+
+g <- ggplot(df, aes(x = cty)) # there is only one variable, "cty"
+g + geom_density(aes(fill=factor(cyl)), alpha=0.8) +
+  labs(title = "Density Plot",
+       subtitle = "City Mileage Grouped by Number of Cylinders",
+       caption = "Source: mpg dataset",
+       x= "city Mileage",      
+       fill="# Cylinders")
+```
+
+### Histogram
+
+-   is for continuous variable.
+    -   in @fig-cty-by-cyl-histogram, the cty is continuous variable.
+
+```{r Histogram}
+#| label: fig-cty-by-cyl-histogram
+#| fig-cap: The impact of cylinder size on the city mileage using histogram
+
+df |> 
+ggplot(aes(x = cty, fill=factor(cyl))) + 
+geom_histogram(color = "white", alpha=0.8) + 
+  facet_wrap(~ factor(cyl), ncol = 1) +
+  labs(title = "City Mileage Grouped by Number of Cylinders",
+       subtitle = "Histogram",
+       caption = "Source: mpg dataset",
+       x = "City Mileage",
+       y = "Frequency / # of Cars",
+       fill = "# of Cylinder"
+       )
+```
+
+### Summary Insights from both plots
+
+::: callout-important
+As can be seen in both @fig-cty-by-cyl-density and @fig-cty-by-cyl-histogram, cylinder size is negatively related to the city mileage.
+:::
+
+### Bar Plot
+
+-   Bar plot is usually used to count one categorical variable, but it can also be used for categorical x and continuous y using "stat = identity".
+
+-   Can we plot the impact of cylinder on city mileage using bar plot?
+
+-   The answer is yes, but a caution is needed to avoid a mistake.
+
+-   Let's consider @fig-cty-by-cyl-bar-1 and @fig-cty-by-cyl-bar-2 below.
+
+```{r Barplot}
+#| message: false
+#| label: fig-cty-by-cyl-bar
+#| fig-cap: The impact of cylinder size on the city mileage using barplots
+#| fig-subcap: 
+#|   - "cty on Y-axis by summing them by cylinder size"
+#|   - "cty on Y-axis by averaging them per cylinder size during the wrangling stage"
+#| layout-ncol: 2
+
+df |> 
+ggplot(aes(x = factor(cyl), y = cty)) + 
+geom_col(aes(fill=factor(cyl)), alpha=0.8, show.legend = FALSE) + 
+  labs(title = "City Mileage Grouped by Number of Cylinders",
+       subtitle = "Barplot",
+       caption = "Source: mpg dataset",
+       x = "# of Cylnders",
+       y = "Sum of City mileages" 
+       )
+
+df |>  
+  group_by(cyl) |>  # group data by cyl
+  summarize(cty_mean = mean(cty), .groups = "drop") |>  # calculate mean of cty and call it "cty_mean"
+ggplot(aes(x = factor(cyl), y = cty_mean)) + 
+geom_col(aes(fill=factor(cyl)), show.legend = FALSE) + 
+  labs(title = "City Mileage Grouped by Number of Cylinders",
+       subtitle = "Barplot",
+       caption = "Source: mpg dataset",
+       x = "# of Cylnders",
+       y = "Average of City mileage"
+       )
+```
+
+::: callout-caution
+#### Lessons
+
+When using `geom_bar` or `geom_col` with continuous y variable, make sure y is expressed as an an average, not sum.
+:::
+
+### Correlation
+
+```{r}
+#| message: false
+#| label: fig-GGally
+#| fig-cap: Correlations table using GGally package
+#| fig-subcap: 
+#|   - "correlations using ggcorr"
+#|   - "correlations using ggpairs"
+#| layout-ncol: 2
+#| column: page
+
+df %>% 
+  select(cyl, displ, cty, hwy) %>% 
+  ggcorr(label = TRUE, label_round = 2) 
+
+df %>% 
+  select(cyl, displ, cty, hwy) %>% # select all continuous variables in the data
+  ggpairs()+
+  theme_bw()
+```
+
+### Scatter plot with regression line
+
+```{r geom point}
+
+df %>% 
+  select(cyl, cty) %>% 
+  ggplot(aes(x = cyl, y = cty))+
+  geom_point() +
+  geom_smooth(method = "lm") +
+  geom_jitter()+
+  labs(title = "City Mileage versus Cylinders",
+       subtitle = "Scatter and jitter plot with regression line",
+       caption = "Source: mpg dataset",
+       x = "# of Cylnders",
+       y = "City mileage", 
+       )
+```
+
+### gt and gtsummary tables
+
+```{r}
+#| label: tbl-mpg-regression
+#| tbl-cap: Regression of cty on cyl
+
+library(gtsummary)
+library(gt)
+
+df |> 
+  lm(cty ~ cyl, data = _) |> 
+  tbl_regression(
+  ) |> 
+  add_n() |> 
+  modify_header(label = "**Variables**") |> 
+  as_gt() |> 
+  tab_header(title = md("**Impact of Cylinder Size on City Mileage (cty)**"),
+             subtitle = md("with `mpg` data"))
+
+m_reg <- df |> 
+  lm(cty ~ cyl, data = _) 
+```
+
+## Conclusion
+
+::: callout-important
+As shown in all the correct charts above, it appears that the number of cylinders is negatively related to city mileages. One may proceeds to use an inferential statistics as in @tbl-mpg-regression to draw a formal conclusion.
+
+> According to the correlation analysis above - @fig-GGally-1 and @fig-GGally-2, the cylinder and the city mileage are highly negatively correlated (*r* = `{r} round(cor(df$cyl, df$cty), 2)`). The regressing city miles on cylinder size shows statistically significant negative impact of cylinder size on the city miles such that one unit increase in cylinder size leads to the `{r} round(m_reg$coefficients[[2]], 2)` miles decrease in the city mileage.
+:::
+
+# Resources in R Community
+
+## Resources for this module
+
+-   R for Data Science (2nd eds): <https://r4ds.hadley.nz/>
+-   Quarto Guide: <https://quarto.org/docs/get-started/hello/rstudio.html>
+-   Quarto Cheatsheet: \<<https://rstudio.github.io/cheatsheets/html/quarto.html>\>
+-   Quarto presentation Workshop: <https://rstudio-conf-2022.github.io/get-started-quarto/materials/05-presentations.html#/presentations>
+
+## Resources in R Community
+
+-   Tidy Tuesday
+
+-   R Facebook Groups
+
+    -   R Statistical Software Group
+
+-   Stackoverflow
+
+    -   Good for general questions
+
+-   YouTube -- *Most effective*
+
+-   X
+
+-   Other social media
