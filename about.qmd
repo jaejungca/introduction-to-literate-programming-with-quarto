@@ -1,0 +1,9 @@
+---
+title: "About"
+---
+
+# About this site
+
+::: {.callout-note}
+This is the lecture note for M01-1: Introdution to Literate Programming.
+:::

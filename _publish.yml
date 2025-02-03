@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: a4f85ce8-643c-406c-9d5c-9a9c85848e77
+      url: https://jmjung.quarto.pub/m01-1-principle-literate-programming

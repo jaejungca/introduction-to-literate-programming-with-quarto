@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "M01-1: Introduction to Literate Programming"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme:
+      - united
+      - brand
+    css: styles.css
+    toc: true
+editor: visual
+execute: 
+  freeze: true
+
